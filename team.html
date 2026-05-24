@@ -59,7 +59,13 @@
             margin-top: 40px;
             font-size: 40px;
             color: #9146FF;
-            text-shadow: 0 0 6px #9146FF;
+            text-shadow: 0 0 12px #9146FF, 0 0 25px #b57aff;
+            transition: 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 18px #b57aff, 0 0 35px #d2a8ff;
         }
 
         /* --- AVATARS --- */
@@ -76,6 +82,20 @@
         .avatar:hover {
             transform: scale(1.05);
             box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
+        }
+
+        /* --- NOMS AVEC GLOW --- */
+        .name {
+            font-size: 22px;
+            margin-top: 10px;
+            color: #ffffff;
+            text-shadow: 0 0 8px #9146FF, 0 0 15px #b57aff;
+            transition: 0.3s ease;
+        }
+
+        .name:hover {
+            color: #b57aff;
+            text-shadow: 0 0 12px #b57aff, 0 0 25px #d2a8ff;
         }
 
         /* --- CERCLE ROUGE PULSANT SI LIVE --- */
@@ -103,10 +123,25 @@
 
 <h1>Affiliés</h1>
 
-<!-- AVATARS AVEC IDs -->
-<img class="avatar" id="avatar-louloutte" src="/louloutte-site/louloutte1.png">
-<img class="avatar" id="avatar-adre" src="/louloutte-site/adré.jpg">
-<img class="avatar" id="avatar-stero" src="/louloutte-site/steroban.jpg">
+<!-- AVATARS + NOMS + IDs -->
+<div style="display:flex; justify-content:center; gap:60px; margin-top:40px;">
+
+    <div>
+        <img class="avatar" id="avatar-louloutte" src="/louloutte-site/louloutte1.png">
+        <p class="name">Louloutte_doris</p>
+    </div>
+
+    <div>
+        <img class="avatar" id="avatar-adre" src="/louloutte-site/adré.jpg">
+        <p class="name">Adren4line</p>
+    </div>
+
+    <div>
+        <img class="avatar" id="avatar-stero" src="/louloutte-site/steroban.jpg">
+        <p class="name">Steroban_tv</p>
+    </div>
+
+</div>
 
 <script>
 /* Liste des streamers */
