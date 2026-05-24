@@ -1,31 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Live de Louloutte</title>
+    <title>Accueil - Louloutte</title>
     <style>
-        body { background:#111; color:white; text-align:center; font-family:Arial; }
-        nav a { color:white; margin: 0 15px; text-decoration:none; font-size:20px; }
-        nav { margin-bottom:30px; }
+        body {
+            margin:0;
+            background:#0d0d0d;
+            color:white;
+            font-family:Arial;
+            text-align:center;
+        }
+
+        nav {
+            text-align:center;
+            padding:20px;
+            background:#111;
+        }
+
+        nav a {
+            color:white;
+            margin:0 20px;
+            text-decoration:none;
+            font-size:20px;
+        }
+
+        nav a:hover {
+            color:#9146FF;
+        }
+
+        h1 {
+            margin-top:60px;
+            color:#9146FF;
+            font-size:40px;
+        }
+
+        p {
+            font-size:20px;
+            margin-top:20px;
+            color:#ccc;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+            line-height:1.6;
+        }
+
+        .buttons {
+            margin-top:40px;
+        }
+
+        .btn {
+            display:inline-block;
+            padding:15px 30px;
+            margin:10px;
+            background:#9146FF;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+            font-size:20px;
+            transition:0.2s;
+        }
+
+        .btn:hover {
+            background:#b57aff;
+        }
     </style>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="team.html">Team</a>
-        <a href="louloutte.html">Mon Live</a>
-    </nav>
 
-    <h1>Live Twitch de Louloutte</h1>
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="team.html">Team</a>
+    <a href="louloutte.html">Mon Live</a>
+</nav>
 
-    <iframe
-        src="https://player.twitch.tv/?channel=louloutte_doris&parent=localhost&autoplay=true"
-        height="600"
-        width="1000"
-        allowfullscreen="true">
-    </iframe>
+<h1>Bienvenue sur la page officielle de Louloutte 💜</h1>
+
+<p>
+    Streamer affiliée sur Twitch, passionnée de gaming et d’ambiance chill.  
+    Ici, tu trouveras mon live, ma Team, et tout ce qui fait vibrer notre communauté.  
+    Merci d’être là — ton soutien fait toute la différence.
+</p>
+
+<div class="buttons">
+    <a class="btn" href="louloutte.html">🎥 Voir mon live</a>
+    <a class="btn" href="team.html">💜 Voir la Team</a>
+</div>
 
 </body>
 </html>
-
