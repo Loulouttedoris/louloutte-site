@@ -2,9 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Affiliés</title>
+    <title>Team Louloutte</title>
+
     <style>
 
+        /* --- BACKGROUND --- */
         body {
             margin: 0;
             background: url('/louloutte-site/background.png') no-repeat center center fixed;
@@ -12,8 +14,29 @@
             color: white;
             font-family: Arial;
             text-align: center;
+            position: relative;
+            animation: fadeIn 0.8s ease-in-out;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        /* --- TRANSITION ENTRE PAGES --- */
+        html {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        html.loaded {
+            opacity: 1;
+        }
+
+        /* --- NAVIGATION --- */
         nav {
             text-align: center;
             padding: 20px;
@@ -33,9 +56,9 @@
             text-shadow: 0 0 10px #9146FF;
         }
 
-        /* --- TITRE AVEC HOVER --- */
+        /* --- TITRE AVEC GLOW --- */
         h1 {
-            margin-top: 40px;
+            margin-top: 60px;
             font-size: 40px;
             color: #9146FF;
             text-shadow: 0 0 6px #9146FF;
@@ -99,6 +122,12 @@
             transform: scale(1.05);
         }
 
+        /* --- ANIMATION PAGE --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
     </style>
 </head>
 
@@ -106,6 +135,7 @@
 
 <nav>
     <a href="/louloutte-site/index.html">Accueil</a>
+    <a href="/louloutte-site/team.html">Team</a>
     <a href="/louloutte-site/louloutte.html">Mon Live</a>
 </nav>
 
@@ -115,26 +145,32 @@
 
     <div class="member">
         <a href="https://www.twitch.tv/louloutte_doris" target="_blank">
-            <img class="avatar" src="louloutte1.png">
+            <img class="avatar" src="/louloutte-site/louloutte1.png">
             <div class="name">Louloutte_doris</div>
         </a>
     </div>
 
     <div class="member">
         <a href="https://www.twitch.tv/adren4line_" target="_blank">
-            <img class="avatar" src="adré.jpg">
+            <img class="avatar" src="/louloutte-site/adré.jpg">
             <div class="name">Adren4line_</div>
         </a>
     </div>
 
     <div class="member">
         <a href="https://www.twitch.tv/steroban_tv" target="_blank">
-            <img class="avatar" src="steroban.jpg">
+            <img class="avatar" src="/louloutte-site/steroban.jpg">
             <div class="name">Steroban_tv</div>
         </a>
     </div>
 
 </div>
+
+<script>
+    window.onload = () => {
+        document.documentElement.classList.add('loaded');
+    };
+</script>
 
 </body>
 </html>
