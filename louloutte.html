@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Louloutte - Live</title>
     <style>
+
+        /* --- BACKGROUND --- */
         body { 
             margin: 0; 
             background: url('background.png') no-repeat center center fixed;
@@ -11,9 +13,9 @@
             color: white; 
             font-family: Arial; 
             text-align: center; 
+            animation: fadeIn 0.8s ease-in-out;
         }
 
-        /* Voile sombre pour lisibilité */
         body::before {
             content: "";
             position: fixed;
@@ -23,6 +25,16 @@
             z-index: -1;
         }
 
+        /* --- TRANSITION ENTRE PAGES --- */
+        html {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        html.loaded {
+            opacity: 1;
+        }
+
+        /* --- NAVIGATION --- */
         nav { 
             text-align: center; 
             padding: 20px; 
@@ -34,36 +46,17 @@
             margin: 0 20px; 
             text-decoration: none; 
             font-size: 20px; 
+            transition: 0.3s;
         }
 
         nav a:hover { 
-            color: #9146FF; 
+            color: #9146FF;
+            text-shadow: 0 0 10px #9146FF;
         }
 
+        /* --- TITRE NÉON --- */
         h1 { 
             margin-top: 40px; 
             color: #9146FF; 
-        }
-    </style>
-</head>
-
-<body>
-
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="team.html">Team Louloutte</a>
-</nav>
-
-<h1>Live de Louloutte</h1>
-
-<iframe
-    src="https://player.twitch.tv/?channel=louloutte_doris&parent=loulouttedoris.github.io"
-    frameborder="0"
-    allowfullscreen="true"
-    scrolling="no"
-    height="378"
-    width="620">
-</iframe>
-
-</body>
-</html>
+            font-size: 40px;
+            text-shadow: 0 0 10px #9146FF, 0 0 20
