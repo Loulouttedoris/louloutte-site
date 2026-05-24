@@ -1,63 +1,114 @@
-<style>
-    body {
-        margin: 0;
-        background: url('background.png') no-repeat center center fixed;
-        background-size: cover;
-        color: white;
-        font-family: Arial;
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Louloutte</title>
+    <style>
+        body {
+            margin: 0;
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
 
-    nav {
-        text-align: center;
-        padding: 20px;
-        background: rgba(17, 17, 17, 0.8);
-    }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
 
-    nav a {
-        color: white;
-        margin: 0 20px;
-        text-decoration: none;
-        font-size: 20px;
-    }
+        nav {
+            text-align: center;
+            padding: 20px;
+            background: rgba(17, 17, 17, 0.8);
+        }
 
-    nav a:hover {
-        color: #9146FF;
-    }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-    h1 {
-        margin-top: 60px;
-        color: #9146FF;
-        font-size: 40px;
-    }
+        nav a:hover {
+            color: #9146FF;
+        }
 
-    p {
-        font-size: 20px;
-        margin-top: 20px;
-        color: #ccc;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-    }
+        h1 {
+            margin-top: 60px;
+            color: #9146FF;
+            font-size: 40px;
+        }
 
-    .buttons {
-        margin-top: 40px;
-    }
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #ccc;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
 
-    .btn {
-        display: inline-block;
-        padding: 15px 30px;
-        margin: 10px;
-        background: #9146FF;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 20px;
-        transition: 0.2s;
-    }
+        .cta {
+            font-size: 22px;
+            margin-top: 25px;
+            font-weight: bold;
+            color: white;
+        }
 
-    .btn:hover {
-        background: #b57aff;
-    }
-</style>
+        .buttons {
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: #9146FF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #b57aff;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="team.html">Team</a>
+    <a href="louloutte.html">Mon Live</a>
+</nav>
+
+<h1>Bienvenue sur la page officielle de Louloutte 💜</h1>
+
+<p>
+    Un espace dédié aux streamers affiliés : du gaming, une ambiance chill et des créateurs passionnés. 
+    Cette page a pour mission de mettre en avant les petites chaînes qui méritent d’être vues. 
+    Tu y trouveras mon live, ma Team et des talents qui font vibrer notre communauté.
+    Merci d’être présent — chaque follow, chaque partage, chaque mot d’encouragement compte vraiment.
+</p>
+
+<p class="cta">
+    👉 Soutiens les affiliés : découvre, follow, partage.
+</p>
+
+<div class="buttons">
+    <a class="btn" href="louloutte.html">🎥 Voir mon live</a>
+    <a class="btn" href="team.html">💜 Voir la Team</a>
+</div>
+
+</body>
+</html>
