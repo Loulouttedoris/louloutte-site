@@ -8,7 +8,7 @@
         /* --- BACKGROUND --- */
         body { 
             margin: 0; 
-            background: url('background.png') no-repeat center center fixed;
+            background: url('/louloutte-site/background.png') no-repeat center center fixed;
             background-size: cover;
             color: white; 
             font-family: Arial; 
@@ -59,4 +59,22 @@
             margin-top: 40px; 
             color: #9146FF; 
             font-size: 40px;
-            text-shadow: 0 0 10px #9146FF, 0 0 20
+            text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        @keyframes neonPulse {
+            from {
+                text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
+            }
+            to {
+                text-shadow: 0 0 20px #b57aff, 0 0 40px #d2a8ff, 0 0 60px #ffffff;
+            }
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 700px) {
+
+            nav a {
+                display: block;
+                margin: 10px 0;
