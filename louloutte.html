@@ -21,14 +21,39 @@
 
 <h1>Live de Louloutte</h1>
 
-<iframe
-    src="https://player.twitch.tv/?channel=loulouttedoris&parent=loulouttedoris.github.io"
-    frameborder="0"
-    allowfullscreen="true"
-    scrolling="no"
-    height="378"
-    width="620">
-</iframe>
+<!-- ICI : le conteneur qui affichera soit le live, soit la bannière -->
+<div id="live-container"></div>
+
+<script>
+async function checkLive() {
+    const user = "louloutte_doris";
+    const url = `https://api.twitch.tv/kraken/streams/${user}?client_id=kimne78kx3ncx6brgo4mv6wki5h1ko&api_version=5`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const container = document.getElementById("live-container");
+
+    if (data.stream) {
+        container.innerHTML = `
+            <iframe
+                src="https://player.twitch.tv/?channel=${user}&parent=loulouttedoris.github.io"
+                frameborder="0"
+                allowfullscreen="true"
+                scrolling="no"
+                height="378"
+                width="620">
+            </iframe>
+        `;
+    } else {
+        container.innerHTML = `
+            <img src="banniere.webp" style="width:80%; border-radius:10px; margin-top:20px;">
+        `;
+    }
+}
+
+checkLive();
+</script>
 
 </body>
 </html>
