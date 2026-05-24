@@ -5,74 +5,101 @@
     <title>Affiliés</title>
     <style>
 
-        /* --- BACKGROUND --- */
-        body { 
-            margin: 0; 
-            background: url('/louloutte-site/background.png') no-repeat center center fixed;
+        body {
+            margin: 0;
+            background-color: #000;
+            background: url('background.png') no-repeat center center fixed;
             background-size: cover;
-            color: white; 
-            font-family: Arial; 
-            text-align: center; 
-            animation: fadeIn 0.8s ease-in-out;
+            color: white;
+            font-family: Arial;
+            text-align: center;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
-
-        /* --- TRANSITION ENTRE PAGES --- */
-        html {
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
-        html.loaded {
-            opacity: 1;
-        }
-
-        /* --- NAVIGATION --- */
-        nav { 
-            text-align: center; 
-            padding: 20px; 
+        nav {
+            text-align: center;
+            padding: 20px;
             background: rgba(17, 17, 17, 0.8);
         }
 
-        nav a { 
-            color: white; 
-            margin: 0 20px; 
-            text-decoration: none; 
-            font-size: 20px; 
-            transition: 0.3s;
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 20px;
         }
 
-        nav a:hover { 
+        nav a:hover {
             color: #9146FF;
-            text-shadow: 0 0 10px #9146FF;
         }
 
-        /* --- TITRE NÉON --- */
-        h1 { 
-            margin-top: 40px; 
-            color: #9146FF; 
+        h1 {
+            margin-top: 40px;
+            color: #9146FF;
             font-size: 40px;
-            text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
-            animation: neonPulse 2s infinite alternate;
         }
 
-        @keyframes neonPulse {
-            from {
-                text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
-            }
-            to {
-                text-shadow: 0 0 20px #b57aff, 0 0 40px #d2a8ff, 0 0 60px #ffffff;
-            }
-        }
-
-        /* --- TEAM GRID --- */
         .team-container {
             display: flex;
-            justify-content
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .member {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #9146FF;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 15px;
+            font-size: 20px;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="/louloutte-site/index.html">Accueil</a>
+    <a href="/louloutte-site/louloutte.html">Mon Live</a>
+</nav>
+
+<h1>Team Louloutte</h1>
+
+<div class="team-container">
+
+    <div class="member">
+        <a href="https://www.twitch.tv/louloutte_doris" target="_blank">
+            <img class="avatar" src="louloutte1.png">
+            <div class="name">Louloutte_doris</div>
+        </a>
+    </div>
+
+    <div class="member">
+        <a href="https://www.twitch.tv/adren4line_" target="_blank">
+            <img class="avatar" src="adré.jpg">
+            <div class="name">Adren4line_</div>
+        </a>
+    </div>
+
+    <div class="member">
+        <a href="https://www.twitch.tv/steroban_tv" target="_blank">
+            <img class="avatar" src="steroban.jpg">
+            <div class="name">Steroban_tv</div>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
