@@ -5,76 +5,59 @@
     <title>Louloutte - Live</title>
     <style>
 
-        /* --- BACKGROUND --- */
-        body { 
-            margin: 0; 
-            background: url('/louloutte-site/background.png') no-repeat center center fixed;
+        body {
+            margin: 0;
+            background-color: #000;
+            background: url('background.png') no-repeat center center fixed;
             background-size: cover;
-            color: white; 
-            font-family: Arial; 
-            text-align: center; 
-            animation: fadeIn 0.8s ease-in-out;
+            color: white;
+            font-family: Arial;
+            text-align: center;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
-
-        /* --- TRANSITION ENTRE PAGES --- */
-        html {
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
-        html.loaded {
-            opacity: 1;
-        }
-
-        /* --- NAVIGATION --- */
-        nav { 
-            text-align: center; 
-            padding: 20px; 
+        nav {
+            text-align: center;
+            padding: 20px;
             background: rgba(17, 17, 17, 0.8);
         }
 
-        nav a { 
-            color: white; 
-            margin: 0 20px; 
-            text-decoration: none; 
-            font-size: 20px; 
-            transition: 0.3s;
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 20px;
         }
 
-        nav a:hover { 
+        nav a:hover {
             color: #9146FF;
-            text-shadow: 0 0 10px #9146FF;
         }
 
-        /* --- TITRE NÉON --- */
-        h1 { 
-            margin-top: 40px; 
-            color: #9146FF; 
+        h1 {
+            margin-top: 40px;
+            color: #9146FF;
             font-size: 40px;
-            text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
-            animation: neonPulse 2s infinite alternate;
         }
 
-        @keyframes neonPulse {
-            from {
-                text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
-            }
-            to {
-                text-shadow: 0 0 20px #b57aff, 0 0 40px #d2a8ff, 0 0 60px #ffffff;
-            }
-        }
+    </style>
+</head>
 
-        /* --- RESPONSIVE MOBILE --- */
-        @media (max-width: 700px) {
+<body>
 
-            nav a {
-                display: block;
-                margin: 10px 0;
+<nav>
+    <a href="/louloutte-site/index.html">Accueil</a>
+    <a href="/louloutte-site/team.html">Team Louloutte</a>
+</nav>
+
+<h1>Live de Louloutte</h1>
+
+<iframe
+    src="https://player.twitch.tv/?channel=louloutte_doris&parent=loulouttedoris.github.io"
+    frameborder="0"
+    allowfullscreen="true"
+    scrolling="no"
+    height="378"
+    width="620">
+</iframe>
+
+</body>
+</html>
