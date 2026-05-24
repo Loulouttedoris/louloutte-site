@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Affiliés</title>
     <style>
+
+        /* --- BACKGROUND --- */
         body { 
             margin: 0; 
             background: url('background.png') no-repeat center center fixed;
@@ -11,6 +13,7 @@
             color: white; 
             font-family: Arial; 
             text-align: center; 
+            animation: fadeIn 0.8s ease-in-out;
         }
 
         body::before {
@@ -22,6 +25,16 @@
             z-index: -1;
         }
 
+        /* --- TRANSITION ENTRE PAGES --- */
+        html {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        html.loaded {
+            opacity: 1;
+        }
+
+        /* --- NAVIGATION --- */
         nav { 
             text-align: center; 
             padding: 20px; 
@@ -33,17 +46,33 @@
             margin: 0 20px; 
             text-decoration: none; 
             font-size: 20px; 
+            transition: 0.3s;
         }
 
         nav a:hover { 
-            color: #9146FF; 
+            color: #9146FF;
+            text-shadow: 0 0 10px #9146FF;
         }
 
+        /* --- TITRE NÉON --- */
         h1 { 
             margin-top: 40px; 
             color: #9146FF; 
+            font-size: 40px;
+            text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
+            animation: neonPulse 2s infinite alternate;
         }
 
+        @keyframes neonPulse {
+            from {
+                text-shadow: 0 0 10px #9146FF, 0 0 20px #9146FF, 0 0 40px #b57aff;
+            }
+            to {
+                text-shadow: 0 0 20px #b57aff, 0 0 40px #d2a8ff, 0 0 60px #ffffff;
+            }
+        }
+
+        /* --- TEAM GRID --- */
         .team-container {
             display: flex;
             justify-content: center;
@@ -56,63 +85,8 @@
             text-align: center;
         }
 
+        /* --- AVATARS ANIMÉS --- */
         .avatar {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
-            border: 4px solid #9146FF;
-            box-shadow: 0 0 25px #9146FF;
-            object-fit: cover;
-        }
-
-        .name {
-            margin-top: 15px;
-            font-size: 20px;
-            color: white;
-        }
-
-        .name:hover {
-            color: #9146FF;
-        }
-    </style>
-</head>
-
-<body>
-
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="louloutte.html">Mon Live</a>
-</nav>
-
-<h1>Team Louloutte</h1>
-
-<div class="team-container">
-
-    <!-- Louloutte -->
-    <div class="member">
-        <a href="https://www.twitch.tv/louloutte_doris" target="_blank">
-            <img class="avatar" src="https://raw.githubusercontent.com/Loulouttedoris/louloutte-site/main/louloutte1.png">
-            <div class="name">Louloutte_doris</div>
-        </a>
-    </div>
-
-    <!-- Adren4line -->
-    <div class="member">
-        <a href="https://www.twitch.tv/adren4line_" target="_blank">
-            <img class="avatar" src="https://raw.githubusercontent.com/Loulouttedoris/louloutte-site/main/adré.jpg">
-            <div class="name">Adren4line_</div>
-        </a>
-    </div>
-
-    <!-- Steroban -->
-    <div class="member">
-        <a href="https://www.twitch.tv/steroban_tv" target="_blank">
-            <img class="avatar" src="https://raw.githubusercontent.com/Loulouttedoris/louloutte-site/main/steroban.jpg">
-            <div class="name">Steroban_tv</div>
-        </a>
-    </div>
-
-</div>
-
-</body>
-</html>
+            border
