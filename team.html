@@ -7,8 +7,7 @@
 
         body {
             margin: 0;
-            background-color: #000;
-            background: url('background.png') no-repeat center center fixed;
+            background: url('/louloutte-site/background.png') no-repeat center center fixed;
             background-size: cover;
             color: white;
             font-family: Arial;
@@ -26,18 +25,32 @@
             margin: 0 20px;
             text-decoration: none;
             font-size: 20px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #9146FF;
+            text-shadow: 0 0 10px #9146FF;
         }
 
+        /* --- TITRE AVEC HOVER --- */
         h1 {
             margin-top: 40px;
-            color: #9146FF;
             font-size: 40px;
+            color: #9146FF;
+            text-shadow: 0 0 6px #9146FF;
+            transition: 0.3s ease;
         }
 
+        h1:hover {
+            color: #b57aff;
+            text-shadow:
+                0 0 12px #b57aff,
+                0 0 25px #d2a8ff;
+            transform: scale(1.05);
+        }
+
+        /* --- TEAM --- */
         .team-container {
             display: flex;
             justify-content: center;
@@ -50,18 +63,40 @@
             text-align: center;
         }
 
+        /* --- AVATAR AVEC HOVER --- */
         .avatar {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             border: 4px solid #9146FF;
             object-fit: cover;
+            transition: 0.3s ease;
+            box-shadow: 0 0 6px #9146FF;
         }
 
+        .avatar:hover {
+            transform: scale(1.08);
+            box-shadow:
+                0 0 12px #b57aff,
+                0 0 25px #d2a8ff;
+            border-color: #b57aff;
+        }
+
+        /* --- NOM AVEC HOVER --- */
         .name {
             margin-top: 15px;
             font-size: 20px;
             color: white;
+            transition: 0.3s ease;
+            text-shadow: 0 0 6px #9146FF;
+        }
+
+        .name:hover {
+            color: #b57aff;
+            text-shadow:
+                0 0 12px #b57aff,
+                0 0 25px #d2a8ff;
+            transform: scale(1.05);
         }
 
     </style>
