@@ -8,7 +8,7 @@
         /* --- BACKGROUND --- */
         body {
             margin: 0;
-            background: url('background.png') no-repeat center center fixed;
+            background: url('/louloutte-site/background.png') no-repeat center center fixed;
             background-size: cover;
             color: white;
             font-family: Arial;
@@ -94,3 +94,99 @@
         /* --- BOUTONS NÉON --- */
         .buttons {
             margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: #9146FF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 20px;
+            transition: 0.25s;
+            box-shadow: 0 0 12px #9146FF;
+        }
+
+        .btn:hover {
+            background: #b57aff;
+            box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
+            transform: scale(1.05);
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 700px) {
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 22px;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-top: 40px;
+            }
+
+            p {
+                font-size: 18px;
+                padding: 0 15px;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 80%;
+                font-size: 22px;
+            }
+        }
+
+        /* --- ANIMATION PAGE --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="/louloutte-site/index.html">Accueil</a>
+    <a href="/louloutte-site/team.html">Team</a>
+    <a href="/louloutte-site/louloutte.html">Mon Live</a>
+</nav>
+
+<h1>Bienvenue sur la page officielle de Louloutte 💜</h1>
+
+<p>
+    Un espace dédié aux streamers affiliés : du gaming, une ambiance chill et des créateurs passionnés.
+    Cette page a pour mission de mettre en avant les petites chaînes qui méritent d’être vues.
+    Tu y trouveras mon live, ma Team et des talents qui font vibrer notre communauté.
+    Merci d’être présent — chaque follow, chaque partage, chaque mot d’encouragement compte vraiment.
+</p>
+
+<p class="cta">
+    👉 Soutiens les affiliés : découvre, follow, partage.
+</p>
+
+<div class="buttons">
+    <a class="btn" href="/louloutte-site/louloutte.html">🎥 Voir mon live</a>
+    <a class="btn" href="/louloutte-site/team.html">💜 Voir la Team</a>
+</div>
+
+<!-- Script transition -->
+<script>
+    window.onload = () => {
+        document.documentElement.classList.add('loaded');
+    };
+</script>
+
+</body>
+</html>
