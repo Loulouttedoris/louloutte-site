@@ -151,7 +151,7 @@ const streamers = [
     { name: "steroban_tv", element: "avatar-stero" }
 ];
 
-/* API sécurisée (ne montre pas ton secret) */
+/* API sécurisée */
 const API_URL = "https://decapi.me/twitch/uptime/";
 
 /* Vérifie si les streamers sont en live */
@@ -161,7 +161,24 @@ async function checkLive() {
         const text = await res.text();
 
         if (!text.includes("offline")) {
-            document.getElementById(s.element).classList.add("live");
+            const avatar = document.getElementById(s.element);
+            avatar.classList.add("live");
+
+            // Avatar cliquable quand live
+            avatar.style.cursor = "pointer";
+            avatar.onclick = () => {
+                window.open("https://twitch.tv/" + s.name, "_blank");
+            };
+
+            // Nom cliquable quand live
+            const nameElement = avatar.parentElement.querySelector(".name");
+            nameElement.style.cursor = "pointer";
+            nameElement.onclick = () => {
+                window.open("https://twitch.tv/" + s.name, "_blank");
+            };
+
+            // Ajouter " – en live" après le nom
+            nameElement.textContent += " – en live";
         }
     }
 }
