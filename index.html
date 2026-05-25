@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Accueil - Louloutte</title>
+
     <style>
 
-        /* --- BACKGROUND --- */
+        /* --- BACKGROUND FIX MOBILE + PC --- */
         body {
             margin: 0;
-            background: url('/louloutte-site/background.png') no-repeat center center fixed;
+            background-image: url("https://loulouttedoris.github.io/louloutte-site/background.png");
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: cover;
+            background-attachment: scroll; /* IMPORTANT : compatible mobile */
             color: white;
             font-family: Arial;
             text-align: center;
@@ -17,6 +21,7 @@
             animation: fadeIn 0.8s ease-in-out;
         }
 
+        /* Overlay noir */
         body::before {
             content: "";
             position: fixed;
@@ -26,7 +31,7 @@
             z-index: -1;
         }
 
-        /* --- TRANSITION ENTRE PAGES --- */
+        /* Transition entre pages */
         html {
             opacity: 0;
             transition: opacity 0.6s ease-in-out;
@@ -55,7 +60,7 @@
             text-shadow: 0 0 10px #9146FF;
         }
 
-        /* --- TITRE AVEC HOVER GLOW (COMME LES BOUTONS) --- */
+        /* --- TITRE --- */
         h1 {
             margin-top: 60px;
             font-size: 40px;
@@ -90,7 +95,7 @@
             color: white;
         }
 
-        /* --- BOUTONS NÉON --- */
+        /* --- BOUTONS --- */
         .buttons {
             margin-top: 40px;
         }
@@ -118,6 +123,30 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+                margin-top: 40px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 18px;
+                padding: 0 15px;
+            }
+
+            .btn {
+                width: 80%;
+                font-size: 18px;
+            }
         }
 
     </style>
