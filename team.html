@@ -95,7 +95,7 @@
             transition: 0.3s ease;
         }
 
-        /* LOGO TWITCH */
+        /* LOGO TWITCH — même effet que le titre */
         .twitch-link {
             display: flex;
             justify-content: center;
@@ -105,12 +105,14 @@
         .twitch-icon {
             width: 28px;
             filter: drop-shadow(0 0 6px #9146FF);
-            transition: 0.25s;
+            transition: 0.3s ease;
         }
 
         .twitch-icon:hover {
             transform: scale(1.15);
-            filter: drop-shadow(0 0 12px #b57aff);
+            filter:
+                drop-shadow(0 0 12px #b57aff)
+                drop-shadow(0 0 25px #d2a8ff);
         }
 
         /* LIVE */
