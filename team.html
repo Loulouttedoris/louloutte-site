@@ -59,7 +59,7 @@
             text-shadow: 0 0 12px #9146FF, 0 0 25px #b57aff;
         }
 
-        .avatar {
+                .avatar {
             width: 180px;
             height: 180px;
             border-radius: 50%;
@@ -73,6 +73,7 @@
             transform: scale(1.05);
             box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
         }
+
         .name {
             font-size: 22px;
             margin-top: 10px;
@@ -124,6 +125,7 @@
     <a href="/louloutte-site/team.html">Affiliés Twitch</a>
     <a href="/louloutte-site/louloutte.html">Mon Live</a>
 </nav>
+
 <h1>Affiliés</h1>
 
 <div class="container" style="display:flex; justify-content:center; gap:60px; margin-top:40px; flex-wrap:wrap;">
@@ -147,64 +149,3 @@
     <div>
         <img class="avatar" id="avatar-stero" src="">
         <p class="name">Steroban_tv</p>
-        <a href="https://twitch.tv/steroban_tv" target="_blank" class="twitch-link">
-            <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
-        </a>
-    </div>
-
-    <div>
-        <img class="avatar" id="avatar-seri" src="">
-        <p class="name">Serizawa5714</p>
-        <a href="https://twitch.tv/serizawa5714" target="_blank" class="twitch-link">
-            <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
-        </a>
-    </div>
-
-</div>
-
-<script>
-const streamers = [
-    { name: "louloutte_doris", element: "avatar-louloutte" },
-    { name: "adren4line_", element: "avatar-adre" },
-    { name: "steroban_tv", element: "avatar-stero" },
-    { name: "serizawa5714", element: "avatar-seri" }
-];
-
-const API_UPTIME = "https://decapi.me/twitch/uptime/";
-const API_AVATAR = "https://decapi.me/twitch/avatar/";
-
-async function loadAvatars() {
-    for (const s of streamers) {
-        document.getElementById(s.element).src = API_AVATAR + s.name;
-    }
-}
-
-async function checkLive() {
-    for (const s of streamers) {
-        const res = await fetch(API_UPTIME + s.name);
-        const text = await res.text();
-
-        if (!text.includes("offline")) {
-            const avatar = document.getElementById(s.element);
-            avatar.classList.add("live");
-
-            avatar.style.cursor = "pointer";
-            avatar.onclick = () => window.open("https://twitch.tv/" + s.name, "_blank");
-
-            const nameElement = avatar.parentElement.querySelector(".name");
-            nameElement.style.cursor = "pointer";
-            nameElement.onclick = () => window.open("https://twitch.tv/" + s.name, "_blank");
-
-            nameElement.textContent += " – en live";
-        }
-    }
-}
-
-loadAvatars();
-checkLive();
-
-window.onload = () => document.documentElement.classList.add('loaded');
-</script>
-
-</body>
-</html>
