@@ -86,7 +86,7 @@
             box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
         }
 
-        /* NOMS — glow identique au titre */
+        /* NOMS */
         .name {
             font-size: 22px;
             margin-top: 10px;
@@ -97,7 +97,7 @@
             transition: 0.3s ease;
         }
 
-        /* LOGO TWITCH — glow + hover */
+        /* LOGO TWITCH */
         .twitch-link {
             display: flex;
             justify-content: center;
@@ -177,13 +177,23 @@
         </a>
     </div>
 
+    <!-- ⭐ NOUVEAU STREAMER AJOUTÉ : SERIZAWA -->
+    <div>
+        <img class="avatar" id="avatar-seri" src="https://loulouttedoris.github.io/louloutte-site/serizawa.jpg">
+        <p class="name">Serizawa5714</p>
+        <a href="https://twitch.tv/serizawa5714" target="_blank" class="twitch-link">
+            <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
+        </a>
+    </div>
+
 </div>
 
 <script>
 const streamers = [
     { name: "louloutte_doris", element: "avatar-louloutte" },
     { name: "adren4line_", element: "avatar-adre" },
-    { name: "steroban_tv", element: "avatar-stero" }
+    { name: "steroban_tv", element: "avatar-stero" },
+    { name: "serizawa5714", element: "avatar-seri" } // ⭐ AJOUTÉ
 ];
 
 const API_URL = "https://decapi.me/twitch/uptime/";
