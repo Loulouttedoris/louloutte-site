@@ -5,7 +5,6 @@
     <title>Affiliés</title>
 
     <style>
-        /* --- BACKGROUND FIX MOBILE + PC --- */
         body {
             margin: 0;
             background-image: url("https://loulouttedoris.github.io/louloutte-site/background.png");
@@ -21,26 +20,21 @@
             animation: fadeIn 0.8s ease-in-out;
         }
 
-        /* Overlay noir */
         body::before {
             content: "";
             position: absolute;
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.4);
             z-index: -1;
         }
 
-        /* Transition */
         html {
             opacity: 0;
             transition: opacity 0.6s ease-in-out;
         }
         html.loaded { opacity: 1; }
 
-        /* NAVIGATION */
         nav {
             text-align: center;
             padding: 20px;
@@ -58,20 +52,13 @@
             text-shadow: 0 0 10px #9146FF;
         }
 
-        /* TITRE */
         h1 {
             margin-top: 40px;
             font-size: 40px;
             color: #9146FF;
             text-shadow: 0 0 12px #9146FF, 0 0 25px #b57aff;
-            transition: 0.3s ease;
-        }
-        h1:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 18px #b57aff, 0 0 35px #d2a8ff;
         }
 
-        /* AVATARS */
         .avatar {
             width: 180px;
             height: 180px;
@@ -80,24 +67,20 @@
             box-shadow: 0 0 15px #9146FF;
             transition: 0.3s ease;
             margin: 20px;
+            object-fit: cover;
         }
         .avatar:hover {
             transform: scale(1.05);
             box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
         }
 
-        /* NOMS */
         .name {
             font-size: 22px;
             margin-top: 10px;
             color: #ffffff;
-            text-shadow:
-                0 0 12px #9146FF,
-                0 0 25px #b57aff;
-            transition: 0.3s ease;
+            text-shadow: 0 0 12px #9146FF, 0 0 25px #b57aff;
         }
 
-        /* LOGO TWITCH */
         .twitch-link {
             display: flex;
             justify-content: center;
@@ -109,15 +92,11 @@
             filter: drop-shadow(0 0 8px #9146FF);
             transition: 0.3s ease;
         }
-
         .twitch-icon:hover {
             transform: scale(1.18);
-            filter:
-                drop-shadow(0 0 14px #b57aff)
-                drop-shadow(0 0 28px #d2a8ff);
+            filter: drop-shadow(0 0 14px #b57aff) drop-shadow(0 0 28px #d2a8ff);
         }
 
-        /* LIVE */
         .live {
             border-color: red !important;
             box-shadow: 0 0 15px red, 0 0 30px red;
@@ -129,7 +108,6 @@
             100% { box-shadow: 0 0 10px red; }
         }
 
-        /* RESPONSIVE */
         @media (max-width: 700px) {
             h1 { font-size: 32px; }
             nav a { display: block; margin: 10px 0; font-size: 22px; }
@@ -137,7 +115,6 @@
             .name { font-size: 20px; }
             .container { flex-direction: column; gap: 20px; }
         }
-
     </style>
 </head>
 
@@ -154,7 +131,7 @@
 <div class="container" style="display:flex; justify-content:center; gap:60px; margin-top:40px; flex-wrap:wrap;">
 
     <div>
-        <img class="avatar" id="avatar-louloutte" src="https://loulouttedoris.github.io/louloutte-site/louloutte1.png">
+        <img class="avatar" id="avatar-louloutte" src="">
         <p class="name">Louloutte_doris</p>
         <a href="https://twitch.tv/louloutte_doris" target="_blank" class="twitch-link">
             <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
@@ -162,7 +139,7 @@
     </div>
 
     <div>
-        <img class="avatar" id="avatar-adre" src="https://loulouttedoris.github.io/louloutte-site/adré.jpg">
+        <img class="avatar" id="avatar-adre" src="">
         <p class="name">Adren4line</p>
         <a href="https://twitch.tv/adren4line_" target="_blank" class="twitch-link">
             <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
@@ -170,16 +147,15 @@
     </div>
 
     <div>
-        <img class="avatar" id="avatar-stero" src="https://loulouttedoris.github.io/louloutte-site/steroban.jpg">
+        <img class="avatar" id="avatar-stero" src="">
         <p class="name">Steroban_tv</p>
         <a href="https://twitch.tv/steroban_tv" target="_blank" class="twitch-link">
             <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
         </a>
     </div>
 
-    <!-- ⭐ NOUVEAU STREAMER AJOUTÉ : SERIZAWA -->
     <div>
-        <img class="avatar" id="avatar-seri" src="https://loulouttedoris.github.io/louloutte-site/serizawa.png">
+        <img class="avatar" id="avatar-seri" src="">
         <p class="name">Serizawa5714</p>
         <a href="https://twitch.tv/serizawa5714" target="_blank" class="twitch-link">
             <img src="https://loulouttedoris.github.io/louloutte-site/logo.png" class="twitch-icon">
@@ -193,14 +169,21 @@ const streamers = [
     { name: "louloutte_doris", element: "avatar-louloutte" },
     { name: "adren4line_", element: "avatar-adre" },
     { name: "steroban_tv", element: "avatar-stero" },
-    { name: "serizawa5714", element: "avatar-seri" } // ⭐ AJOUTÉ
+    { name: "serizawa5714", element: "avatar-seri" }
 ];
 
-const API_URL = "https://decapi.me/twitch/uptime/";
+const API_UPTIME = "https://decapi.me/twitch/uptime/";
+const API_AVATAR = "https://decapi.me/twitch/avatar/";
+
+async function loadAvatars() {
+    for (const s of streamers) {
+        document.getElementById(s.element).src = API_AVATAR + s.name;
+    }
+}
 
 async function checkLive() {
     for (const s of streamers) {
-        const res = await fetch(API_URL + s.name);
+        const res = await fetch(API_UPTIME + s.name);
         const text = await res.text();
 
         if (!text.includes("offline")) {
@@ -219,6 +202,7 @@ async function checkLive() {
     }
 }
 
+loadAvatars();
 checkLive();
 
 window.onload = () => document.documentElement.classList.add('loaded');
