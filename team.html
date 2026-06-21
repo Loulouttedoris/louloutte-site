@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Affiliés</title>
-    <style>
 
+    <style>
         /* --- BACKGROUND --- */
         body { 
             margin: 0; 
@@ -89,4 +89,100 @@
         .avatar {
             width: 150px;
             height: 150px;
-            border
+            border-radius: 50%;
+            border: 3px solid #9146FF;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- ÉTAT LIVE --- */
+        .live {
+            box-shadow: 0 0 20px red, 0 0 40px red;
+        }
+
+        /* --- NOM --- */
+        .name {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* --- FADE IN --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="team.html">Affiliés</a>
+    </nav>
+
+    <h1>Affiliés Twitch</h1>
+
+    <div class="team-container">
+
+        <div class="member">
+            <img id="avatar-louloutte" class="avatar" src="louloutte.jpg">
+            <div class="name">louloutte_doris</div>
+        </div>
+
+        <div class="member">
+            <img id="avatar-adre" class="avatar" src="adre.jpg">
+            <div class="name">adren4line_</div>
+        </div>
+
+        <div class="member">
+            <img id="avatar-stero" class="avatar" src="stero.jpg">
+            <div class="name">steroban_tv</div>
+        </div>
+
+        <div class="member">
+            <img id="avatar-serizawa" class="avatar" src="serizawa.jpg">
+            <div class="name">serizawa5714</div>
+        </div>
+
+    </div>
+
+    <script>
+        const streamers = [
+            { name: "louloutte_doris", element: "avatar-louloutte" },
+            { name: "adren4line_", element: "avatar-adre" },
+            { name: "steroban_tv", element: "avatar-stero" },
+            { name: "serizawa5714", element: "avatar-serizawa" }
+        ];
+
+        const API_URL = "https://decapi.me/twitch/uptime/";
+
+        async function checkLive() {
+            for (const s of streamers) {
+                const res = await fetch(API_URL + s.name);
+                const text = await res.text();
+
+                if (!text.includes("offline")) {
+                    const avatar = document.getElementById(s.element);
+                    avatar.classList.add("live");
+                    avatar.style.cursor = "pointer";
+                    avatar.onclick = () => window.open("https://twitch.tv/" + s.name, "_blank");
+
+                    const nameElement = avatar.parentElement.querySelector(".name");
+                    nameElement.style.cursor = "pointer";
+                    nameElement.onclick = () => window.open("https://twitch.tv/" + s.name, "_blank");
+                    nameElement.textContent += " - en live";
+                }
+            }
+        }
+
+        checkLive();
+        window.onload = () => document.documentElement.classList.add('loaded');
+    </script>
+
+</body>
+</html>
