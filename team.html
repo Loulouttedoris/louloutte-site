@@ -148,7 +148,7 @@
 
         /* ==========================================
            LISTE DES STREAMERS
-
+           
            Pour ajouter un streamer :
            ajoute simplement son pseudo entre guillemets.
            ========================================== */
@@ -185,8 +185,24 @@
             team.appendChild(member);
 
 
-            /* Avatar Twitch automatique */
-            avatar.src = "https://decapi.me/twitch/avatar/" + username;
+            /* Récupération de l'adresse de l'avatar Twitch */
+            try {
+
+                const avatarResponse = await fetch(
+                    "https://decapi.me/twitch/avatar/" + username
+                );
+
+                const avatarUrl = await avatarResponse.text();
+
+                avatar.src = avatarUrl.trim();
+
+            } catch (error) {
+
+                console.log(
+                    "Impossible de récupérer l'avatar de " + username
+                );
+
+            }
 
 
             /* Lien vers Twitch */
