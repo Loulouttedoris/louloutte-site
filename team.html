@@ -242,10 +242,18 @@ streamers.forEach(username => {
     avatar.alt = "Avatar de " + username;
 
     /*
-       Récupération automatique de l'avatar Twitch
-       grâce à DecAPI.
+       DecAPI renvoie l'URL de l'avatar Twitch.
+       On récupère d'abord cette URL, puis on la donne à l'image.
     */
-    avatar.src = "https://decapi.me/twitch/avatar/" + username;
+
+    fetch("https://decapi.me/twitch/avatar/" + username)
+        .then(response => response.text())
+        .then(avatarUrl => {
+            avatar.src = avatarUrl.trim();
+        })
+        .catch(() => {
+            console.error("Impossible de récupérer l'avatar de " + username);
+        });
 
     const name = document.createElement("h2");
     name.textContent = username;
@@ -263,6 +271,7 @@ streamers.forEach(username => {
     /*
        Vérification du statut Twitch
     */
+
     fetch("https://decapi.me/twitch/uptime/" + username)
         .then(response => response.text())
         .then(data => {
