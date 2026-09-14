@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Affiliés Twitch - Team Louloutte</title>
+
+<title>Les Affiliés Twitch - Team Louloutte 💜</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -12,16 +13,18 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    min-height: 100%;
     font-family: Arial, sans-serif;
     color: white;
+}
+
+body {
     background:
-        linear-gradient(rgba(15, 5, 25, 0.78), rgba(15, 5, 25, 0.88)),
-        url("https://loulouttedoris.github.io/louloutte-site/background.png")
-        center / cover fixed no-repeat;
-    text-align: center;
+        linear-gradient(rgba(10, 5, 20, 0.75), rgba(10, 5, 20, 0.75)),
+        url("https://loulouttedoris.github.io/louloutte-site/background.png") center/cover fixed no-repeat;
 
     animation: fadeIn 0.6s ease-in;
 }
@@ -36,77 +39,82 @@ body {
     }
 }
 
+/* NAVIGATION */
+
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 12px;
+    padding: 20px 10px;
     flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    background: rgba(120, 40, 180, 0.35);
-    border: 1px solid #a855f7;
+    background: rgba(120, 60, 180, 0.35);
+    border: 1px solid rgba(190, 120, 255, 0.5);
     padding: 10px 18px;
     border-radius: 10px;
     transition: 0.25s;
 }
 
 nav a:hover {
-    background: rgba(168, 85, 247, 0.65);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    background: rgba(150, 80, 220, 0.6);
     transform: translateY(-2px);
 }
 
+/* CONTENU */
+
 .container {
-    width: 94%;
     max-width: 1100px;
-    margin: 30px auto 50px;
-    padding: 35px 25px;
-    background: rgba(15, 5, 25, 0.65);
-    border: 1px solid rgba(168, 85, 247, 0.5);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(120, 40, 180, 0.25);
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 180px;
+    max-width: 80%;
+    margin-bottom: 10px;
 }
 
 h1 {
-    color: #d8b4fe;
     font-size: 32px;
-    margin: 10px 0 15px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(180, 100, 255, 0.7);
 }
 
 .intro {
-    max-width: 750px;
+    max-width: 700px;
     margin: 0 auto 35px;
     line-height: 1.6;
-    color: #f3e8ff;
-    font-size: 16px;
+    color: #ddd;
 }
+
+/* AFFILIÉS */
 
 .team-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .member {
     width: 190px;
     padding: 20px 15px;
-    background: rgba(30, 10, 45, 0.75);
-    border: 1px solid rgba(168, 85, 247, 0.65);
+    background: rgba(20, 10, 35, 0.75);
+    border: 1px solid rgba(170, 90, 255, 0.6);
     border-radius: 15px;
-    cursor: pointer;
-    transition: 0.25s;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
 }
 
 .member:hover {
-    transform: translateY(-5px);
-    border-color: #c084fc;
-    box-shadow: 0 0 22px rgba(168, 85, 247, 0.55);
+    transform: translateY(-7px);
+    box-shadow: 0 0 20px rgba(170, 90, 255, 0.55);
 }
 
 .avatar {
@@ -117,56 +125,54 @@ h1 {
     border: 3px solid #a855f7;
     display: block;
     margin: 0 auto 15px;
-    background: #24102f;
-    transition: 0.25s;
 }
 
-.member:hover .avatar {
-    box-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
+.member.live .avatar {
+    border-color: #ff3b3b;
+    box-shadow: 0 0 18px rgba(255, 50, 50, 0.7);
 }
 
-.avatar.live {
-    border-color: #ff3030;
-    box-shadow: 0 0 18px rgba(255, 48, 48, 0.7);
-}
-
-.member-name {
-    font-size: 17px;
-    font-weight: bold;
-    color: #f3e8ff;
+.member h2 {
+    font-size: 18px;
+    margin: 8px 0;
     word-break: break-word;
 }
 
 .live-status {
-    margin-top: 8px;
+    font-size: 14px;
     min-height: 20px;
-    color: #ff4d4d;
-    font-size: 13px;
+    color: #aaa;
+}
+
+.member.live .live-status {
+    color: #ff4b4b;
     font-weight: bold;
 }
 
-@media (max-width: 700px) {
-    .container {
-        width: 94%;
-        padding: 25px 12px;
-        margin-top: 15px;
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+        font-size: 14px;
     }
 
     h1 {
         font-size: 26px;
     }
 
-    .intro {
-        font-size: 15px;
-    }
-
     .team-container {
-        gap: 18px;
+        gap: 15px;
     }
 
     .member {
         width: 160px;
-        padding: 16px 10px;
+        padding: 15px 10px;
     }
 
     .avatar {
@@ -174,19 +180,8 @@ h1 {
         height: 125px;
     }
 
-    .member-name {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 400px) {
-    .member {
-        width: 145px;
-    }
-
-    .avatar {
-        width: 115px;
-        height: 115px;
+    .member h2 {
+        font-size: 16px;
     }
 }
 </style>
@@ -202,18 +197,25 @@ h1 {
 
 <div class="container">
 
+    <img
+        src="https://loulouttedoris.github.io/louloutte-site/logo.png"
+        alt="Logo Louloutte"
+        class="logo"
+    >
+
     <h1>Les Affiliés de la Team Louloutte 💜</h1>
 
-    <div class="intro">
-        Découvrez les créateurs qui font partie de la Team Louloutte.
+    <p class="intro">
+        Découvrez les créateurs qui font partie de la Team Louloutte.<br>
         Cliquez sur un profil pour découvrir sa chaîne Twitch et soutenir son univers.
-    </div>
+    </p>
 
     <div class="team-container" id="team"></div>
 
 </div>
 
 <script>
+
 const streamers = [
     "louloutte_doris",
     "adren4line_",
@@ -225,58 +227,26 @@ const streamers = [
 
 const team = document.getElementById("team");
 
-function createFallbackAvatar(username) {
-    const canvas = document.createElement("canvas");
-    canvas.width = 300;
-    canvas.height = 300;
-
-    const ctx = canvas.getContext("2d");
-
-    ctx.fillStyle = "#24102f";
-    ctx.fillRect(0, 0, 300, 300);
-
-    ctx.fillStyle = "#a855f7";
-    ctx.beginPath();
-    ctx.arc(150, 115, 55, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(150, 285, 105, 0, Math.PI * 2);
-    ctx.fill();
-
-    return canvas.toDataURL("image/png");
-}
-
 streamers.forEach(username => {
 
-    const member = document.createElement("div");
+    const member = document.createElement("a");
     member.className = "member";
-
-    member.onclick = () => {
-        window.open(
-            "https://www.twitch.tv/" + username,
-            "_blank",
-            "noopener,noreferrer"
-        );
-    };
+    member.href = "https://www.twitch.tv/" + username;
+    member.target = "_blank";
+    member.rel = "noopener noreferrer";
 
     const avatar = document.createElement("img");
-
     avatar.className = "avatar";
     avatar.alt = "Avatar de " + username;
+
     avatar.src = "https://decapi.me/twitch/avatar/" + username;
 
-    avatar.onerror = () => {
-        avatar.onerror = null;
-        avatar.src = createFallbackAvatar(username);
-    };
-
-    const name = document.createElement("div");
-    name.className = "member-name";
+    const name = document.createElement("h2");
     name.textContent = username;
 
     const status = document.createElement("div");
     status.className = "live-status";
+    status.textContent = "Hors ligne";
 
     member.appendChild(avatar);
     member.appendChild(name);
@@ -288,22 +258,22 @@ streamers.forEach(username => {
         .then(response => response.text())
         .then(data => {
 
-            const result = data.trim().toLowerCase();
-
             if (
-                result &&
-                !result.includes("offline") &&
-                !result.includes("not live")
+                data &&
+                !data.toLowerCase().includes("offline") &&
+                !data.toLowerCase().includes("not live")
             ) {
-                avatar.classList.add("live");
+                member.classList.add("live");
                 status.textContent = "🔴 EN LIVE";
             }
 
         })
         .catch(() => {
-            // Le profil reste affiché même si le statut Twitch ne répond pas.
+            status.textContent = "Hors ligne";
         });
+
 });
+
 </script>
 
 </body>
