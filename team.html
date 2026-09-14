@@ -23,7 +23,6 @@ body {
         center / cover fixed no-repeat;
     text-align: center;
 
-    /* Fade général de la page */
     animation: fadeIn 0.6s ease-in;
 }
 
@@ -118,6 +117,7 @@ h1 {
     border: 3px solid #a855f7;
     display: block;
     margin: 0 auto 15px;
+    background: #24102f;
     transition: 0.25s;
 }
 
@@ -225,6 +225,28 @@ const streamers = [
 
 const team = document.getElementById("team");
 
+function createFallbackAvatar(username) {
+    const canvas = document.createElement("canvas");
+    canvas.width = 300;
+    canvas.height = 300;
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#24102f";
+    ctx.fillRect(0, 0, 300, 300);
+
+    ctx.fillStyle = "#a855f7";
+    ctx.beginPath();
+    ctx.arc(150, 115, 55, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(150, 285, 105, 0, Math.PI * 2);
+    ctx.fill();
+
+    return canvas.toDataURL("image/png");
+}
+
 streamers.forEach(username => {
 
     const member = document.createElement("div");
@@ -239,9 +261,15 @@ streamers.forEach(username => {
     };
 
     const avatar = document.createElement("img");
+
     avatar.className = "avatar";
     avatar.alt = "Avatar de " + username;
     avatar.src = "https://decapi.me/twitch/avatar/" + username;
+
+    avatar.onerror = () => {
+        avatar.onerror = null;
+        avatar.src = createFallbackAvatar(username);
+    };
 
     const name = document.createElement("div");
     name.className = "member-name";
@@ -260,10 +288,12 @@ streamers.forEach(username => {
         .then(response => response.text())
         .then(data => {
 
+            const result = data.trim().toLowerCase();
+
             if (
-                data &&
-                !data.toLowerCase().includes("offline") &&
-                !data.toLowerCase().includes("not live")
+                result &&
+                !result.includes("offline") &&
+                !result.includes("not live")
             ) {
                 avatar.classList.add("live");
                 status.textContent = "🔴 EN LIVE";
@@ -271,7 +301,7 @@ streamers.forEach(username => {
 
         })
         .catch(() => {
-            // Le profil reste affiché si le statut ne peut pas être récupéré.
+            // Le profil reste affiché même si le statut Twitch ne répond pas.
         });
 });
 </script>
