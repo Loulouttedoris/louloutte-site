@@ -1,307 +1,312 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Affiliés Twitch - Team Louloutte 💜</title>
+    <title>Affiliés Twitch - Team Louloutte 💜</title>
 
-<meta name="description" content="Découvrez les affiliés Twitch de la Team Louloutte : des créateurs gaming passionnés, leurs chaînes Twitch et leurs univers. 💜">
+    <meta name="description" content="Découvrez les affiliés Twitch de la Team Louloutte : des créateurs gaming passionnés, leurs chaînes Twitch et leurs univers. 💜">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="canonical" href="https://loulouttedoris.github.io/louloutte-site/team.html">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    font-family: Arial, sans-serif;
-    color: white;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    background:
-        linear-gradient(rgba(10, 5, 20, 0.75), rgba(10, 5, 20, 0.75)),
-        url("https://loulouttedoris.github.io/louloutte-site/background.png") center/cover fixed no-repeat;
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
 
-    animation: fadeIn 0.6s ease-in;
-}
+        body {
+            background:
+                linear-gradient(rgba(20, 5, 35, 0.78), rgba(20, 5, 35, 0.88)),
+                url("background.png") center / cover fixed;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
 
-    to {
-        opacity: 1;
-    }
-}
+        header {
+            padding: 30px 20px 15px;
+        }
 
-/* NAVIGATION */
+        .logo {
+            width: 180px;
+            max-width: 70%;
+            height: auto;
+        }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px 10px;
-    flex-wrap: wrap;
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 15px auto 25px;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    background: rgba(120, 60, 180, 0.35);
-    border: 1px solid rgba(190, 120, 255, 0.5);
-    padding: 10px 18px;
-    border-radius: 10px;
-    transition: 0.25s;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            background: rgba(120, 50, 180, 0.35);
+            border: 1px solid rgba(190, 120, 255, 0.5);
+            padding: 10px 18px;
+            border-radius: 20px;
+            transition: 0.25s;
+        }
 
-nav a:hover {
-    background: rgba(150, 80, 220, 0.6);
-    transform: translateY(-2px);
-}
+        nav a:hover {
+            background: rgba(150, 70, 220, 0.6);
+            transform: translateY(-2px);
+        }
 
-/* CONTENU */
+        main {
+            width: min(1000px, 92%);
+            margin: auto;
+        }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
+        h1 {
+            color: #d9a7ff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
 
-.logo {
-    width: 180px;
-    max-width: 80%;
-    margin-bottom: 10px;
-}
+        .intro {
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
 
-h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 15px rgba(180, 100, 255, 0.7);
-}
+        .live-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: #d9a7ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s;
+        }
 
-.intro {
-    max-width: 700px;
-    margin: 0 auto 35px;
-    line-height: 1.6;
-    color: #ddd;
-}
+        .live-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
 
-/* AFFILIÉS */
+        .team {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
 
-.team-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+        .card {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background: rgba(20, 10, 35, 0.68);
+            border: 1px solid rgba(190, 120, 255, 0.3);
+            border-radius: 20px;
+            padding: 25px 15px;
+            box-shadow: 0 0 20px rgba(150, 70, 220, 0.12);
+            transition: 0.25s;
+        }
 
-.member {
-    width: 190px;
-    padding: 20px 15px;
-    background: rgba(20, 10, 35, 0.75);
-    border: 1px solid rgba(170, 90, 255, 0.6);
-    border-radius: 15px;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(210, 150, 255, 0.7);
+            box-shadow: 0 0 25px rgba(150, 70, 220, 0.3);
+        }
 
-.member:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 0 20px rgba(170, 90, 255, 0.55);
-}
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(190, 120, 255, 0.55);
+            margin-bottom: 15px;
+            transition: 0.25s;
+        }
 
-.avatar {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #a855f7;
-    display: block;
-    margin: 0 auto 15px;
-}
+        .card:hover .avatar {
+            border-color: #d9a7ff;
+        }
 
-.member.live .avatar {
-    border-color: #ff3b3b;
-    box-shadow: 0 0 18px rgba(255, 50, 50, 0.7);
-}
+        .name {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-.member h2 {
-    font-size: 18px;
-    margin: 8px 0;
-    word-break: break-word;
-}
+        .status {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
 
-.live-status {
-    font-size: 14px;
-    min-height: 20px;
-    color: #aaa;
-}
+        .live .avatar {
+            border-color: #ff3b3b;
+            box-shadow: 0 0 18px rgba(255, 59, 59, 0.45);
+        }
 
-.member.live .live-status {
-    color: #ff4b4b;
-    font-weight: bold;
-}
+        .live .status {
+            color: #ff4b4b;
+            font-weight: bold;
+        }
 
-/* MOBILE */
+        @media (max-width: 800px) {
+            .team {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (max-width: 600px) {
+        @media (max-width: 550px) {
+            header {
+                padding-top: 20px;
+            }
 
-    nav {
-        gap: 8px;
-    }
+            .logo {
+                width: 145px;
+            }
 
-    nav a {
-        padding: 9px 12px;
-        font-size: 14px;
-    }
+            h1 {
+                font-size: 1.6rem;
+            }
 
-    h1 {
-        font-size: 26px;
-    }
+            .intro {
+                font-size: 0.98rem;
+            }
 
-    .team-container {
-        gap: 15px;
-    }
+            nav a {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
 
-    .member {
-        width: 160px;
-        padding: 15px 10px;
-    }
+            .team {
+                grid-template-columns: 1fr;
+            }
 
-    .avatar {
-        width: 125px;
-        height: 125px;
-    }
-
-    .member h2 {
-        font-size: 16px;
-    }
-}
-</style>
+            .avatar {
+                width: 125px;
+                height: 125px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-    <a href="/louloutte-site/index.html">Accueil</a>
-    <a href="/louloutte-site/team.html">Affiliés Twitch</a>
-    <a href="/louloutte-site/louloutte.html">Mon Live</a>
-</nav>
+<header>
+    <img src="logo.png" alt="Logo Louloutte" class="logo">
 
-<div class="container">
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="team.html">Affiliés Twitch</a>
+        <a href="louloutte.html">Mon Live</a>
+    </nav>
+</header>
 
-    <img
-        src="https://loulouttedoris.github.io/louloutte-site/logo.png"
-        alt="Logo Louloutte"
-        class="logo"
-    >
+<main>
 
     <h1>Les Affiliés de la Team Louloutte 💜</h1>
 
-    <p class="intro">
+    <div class="intro">
         Découvrez les créateurs qui font partie de la Team Louloutte.<br>
         Cliquez sur un profil pour découvrir sa chaîne Twitch et soutenir son univers.
-    </p>
 
-    <div class="team-container" id="team"></div>
+        <br>
 
-</div>
+        <a href="louloutte.html" class="live-link">
+            🎥 Voir le Live Twitch de Louloutte
+        </a>
+    </div>
+
+    <div class="team">
+
+        <a class="card" href="https://www.twitch.tv/louloutte_doris" target="_blank" rel="noopener noreferrer">
+            <img class="avatar" data-username="louloutte_doris" alt="Avatar de louloutte_doris">
+            <div class="name">louloutte_doris</div>
+            <div class="status">Hors ligne</div>
+        </a>
+
+        <a class="card" href="https://www.twitch.tv/adren4line_" target="_blank" rel="noopener noreferrer">
+            <img class="avatar" data-username="adren4line_" alt="Avatar de adren4line_">
+            <div class="name">adren4line_</div>
+            <div class="status">Hors ligne</div>
+        </a>
+
+        <a class="card" href="https://www.twitch.tv/steroban_tv" target="_blank" rel="noopener noreferrer">
+            <img class="avatar" data-username="steroban_tv" alt="Avatar de steroban_tv">
+            <div class="name">steroban_tv</div>
+            <div class="status">Hors ligne</div>
+        </a>
+
+        <a class="card" href="https://www.twitch.tv/serizawa5714" target="_blank" rel="noopener noreferrer">
+            <img class="avatar" data-username="serizawa5714" alt="Avatar de serizawa5714">
+            <div class="name">serizawa5714</div>
+            <div class="status">Hors ligne</div>
+        </a>
+
+        <a class="card" href="https://www.twitch.tv/pikharleyquinn" target="_blank" rel="noopener noreferrer">
+            <img class="avatar" data-username="pikharleyquinn" alt="Avatar de pikharleyquinn">
+            <div class="name">pikharleyquinn</div>
+            <div class="status">Hors ligne</div>
+        </a>
+
+        <a class="card" href="https://www.twitch.tv/micky__rcs67" target="_blank" rel="noopener noreferrer">
+            <img class="avatar" data-username="micky__rcs67" alt="Avatar de micky__rcs67">
+            <div class="name">micky__rcs67</div>
+            <div class="status">Hors ligne</div>
+        </a>
+
+    </div>
+
+</main>
 
 <script>
+    const cards = document.querySelectorAll(".card");
 
-const streamers = [
-    "louloutte_doris",
-    "adren4line_",
-    "steroban_tv",
-    "serizawa5714",
-    "pikharleyquinn",
-    "micky__rcs67"
-];
+    cards.forEach(card => {
+        const username = card.querySelector(".avatar").dataset.username;
+        const avatar = card.querySelector(".avatar");
+        const status = card.querySelector(".status");
 
-const team = document.getElementById("team");
+        fetch("https://decapi.me/twitch/avatar/" + username)
+            .then(response => response.text())
+            .then(avatarUrl => {
+                const url = avatarUrl.trim();
 
-streamers.forEach(username => {
+                if (url.startsWith("http")) {
+                    avatar.src = url;
+                }
+            })
+            .catch(() => {
+                console.error("Impossible de récupérer l'avatar de " + username);
+            });
 
-    const member = document.createElement("a");
-
-    member.className = "member";
-    member.href = "https://www.twitch.tv/" + username;
-    member.target = "_blank";
-    member.rel = "noopener noreferrer";
-
-    const avatar = document.createElement("img");
-
-    avatar.className = "avatar";
-    avatar.alt = "Avatar de " + username;
-
-    /*
-       DecAPI renvoie l'URL de l'avatar Twitch.
-       On récupère cette URL puis on l'utilise comme source de l'image.
-    */
-
-    fetch("https://decapi.me/twitch/avatar/" + username)
-        .then(response => response.text())
-        .then(avatarUrl => {
-
-            const url = avatarUrl.trim();
-
-            if (url.startsWith("http")) {
-                avatar.src = url;
-            }
-
-        })
-        .catch(() => {
-            console.error("Impossible de récupérer l'avatar de " + username);
-        });
-
-    const name = document.createElement("h2");
-    name.textContent = username;
-
-    const status = document.createElement("div");
-    status.className = "live-status";
-    status.textContent = "Hors ligne";
-
-    member.appendChild(avatar);
-    member.appendChild(name);
-    member.appendChild(status);
-
-    team.appendChild(member);
-
-    /*
-       Vérification du statut Twitch
-    */
-
-    fetch("https://decapi.me/twitch/uptime/" + username)
-        .then(response => response.text())
-        .then(data => {
-
-            const result = data.toLowerCase();
-
-            if (
-                result &&
-                !result.includes("offline") &&
-                !result.includes("not live")
-            ) {
-                member.classList.add("live");
-                status.textContent = "🔴 EN LIVE";
-            }
-
-        })
-        .catch(() => {
-            status.textContent = "Hors ligne";
-        });
-
-});
-
+        fetch("https://decapi.me/twitch/uptime/" + username)
+            .then(response => response.text())
+            .then(result => {
+                if (result && !result.toLowerCase().includes("offline")) {
+                    card.classList.add("live");
+                    status.textContent = "🔴 EN LIVE";
+                } else {
+                    status.textContent = "Hors ligne";
+                }
+            })
+            .catch(() => {
+                status.textContent = "Hors ligne";
+            });
+    });
 </script>
 
 </body>
