@@ -273,40 +273,104 @@
 </main>
 
 <script>
-    const cards = document.querySelectorAll(".card");
+    const team = document.querySelector(".team");
+    const cards = Array.from(document.querySelectorAll(".card"));
 
-    cards.forEach(card => {
+    const checkMember = async (card) => {
         const username = card.querySelector(".avatar").dataset.username;
         const avatar = card.querySelector(".avatar");
         const status = card.querySelector(".status");
 
-        fetch("https://decapi.me/twitch/avatar/" + username)
-            .then(response => response.text())
-            .then(avatarUrl => {
-                const url = avatarUrl.trim();
+        let isLive = false;
 
-                if (url.startsWith("http")) {
-                    avatar.src = url;
-                }
-            })
-            .catch(() => {
-                console.error("Impossible de récupérer l'avatar de " + username);
-            });
+        /*
+         * RÉCUPÉRATION DE L'AVATAR
+         * On garde exactement le système qui fonctionne actuellement.
+         */
+        try {
+            const response = await fetch(
+                "https://decapi.me/twitch/avatar/" + username
+            );
 
-        fetch("https://decapi.me/twitch/uptime/" + username)
-            .then(response => response.text())
-            .then(result => {
-                if (result && !result.toLowerCase().includes("offline")) {
-                    card.classList.add("live");
-                    status.textContent = "🔴 EN LIVE";
-                } else {
-                    status.textContent = "Hors ligne";
-                }
-            })
-            .catch(() => {
+            const avatarUrl = await response.text();
+            const url = avatarUrl.trim();
+
+            if (url.startsWith("http")) {
+                avatar.src = url;
+            }
+        } catch (error) {
+            console.error(
+                "Impossible de récupérer l'avatar de " + username
+            );
+        }
+
+        /*
+         * VÉRIFICATION DU LIVE
+         */
+        try {
+            const response = await fetch(
+                "https://decapi.me/twitch/uptime/" + username
+            );
+
+            const result = await response.text();
+
+            if (
+                result &&
+                !result.toLowerCase().includes("offline")
+            ) {
+                isLive = true;
+                card.classList.add("live");
+                status.textContent = "🔴 EN LIVE";
+            } else {
                 status.textContent = "Hors ligne";
-            });
-    });
+            }
+
+        } catch (error) {
+            status.textContent = "Hors ligne";
+        }
+
+        return {
+            card: card,
+            isLive: isLive,
+            name: card.querySelector(".name").textContent.trim()
+        };
+    };
+
+    const updateTeamOrder = async () => {
+
+        const members = await Promise.all(
+            cards.map(card => checkMember(card))
+        );
+
+        /*
+         * CLASSEMENT AUTOMATIQUE :
+         * 1. Les personnes en live
+         * 2. Puis classement alphabétique
+         * 3. Les personnes hors ligne
+         * 4. Puis classement alphabétique
+         */
+        members.sort((a, b) => {
+
+            if (a.isLive !== b.isLive) {
+                return a.isLive ? -1 : 1;
+            }
+
+            return a.name.localeCompare(
+                b.name,
+                "fr",
+                { sensitivity: "base" }
+            );
+        });
+
+        /*
+         * On replace les cartes dans le nouvel ordre.
+         */
+        members.forEach(member => {
+            team.appendChild(member.card);
+        });
+    };
+
+    updateTeamOrder();
 </script>
 
 </body>
