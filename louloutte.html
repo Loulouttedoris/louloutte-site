@@ -1,110 +1,280 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Live de Louloutte</title>
 
-    <style>
+```
+<!-- Font Awesome pour les logos des réseaux -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        /* --- BACKGROUND FIX MOBILE + PC --- */
-        body {
-            margin: 0;
-            background-image: url("https://loulouttedoris.github.io/louloutte-site/background.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            background-attachment: scroll;
-            color: white;
-            font-family: Arial;
-            text-align: center;
-            position: relative;
-            min-height: 100vh;
-            animation: fadeIn 0.8s ease-in-out;
-        }
+<style>
 
-        /* Overlay noir */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
+    /* --- BACKGROUND FIX MOBILE + PC --- */
+    body {
+        margin: 0;
+        background-image: url("https://loulouttedoris.github.io/louloutte-site/background.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: scroll;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+        position: relative;
+        min-height: 100vh;
+        animation: fadeIn 0.8s ease-in-out;
+    }
 
-        /* Transition */
-        html {
+    /* Overlay noir */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+    }
+
+    /* Transition */
+    html {
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+    }
+
+    html.loaded {
+        opacity: 1;
+    }
+
+    /* --- NAVIGATION --- */
+    nav {
+        text-align: center;
+        padding: 20px;
+        background: rgba(17, 17, 17, 0.8);
+    }
+
+    nav a {
+        color: white;
+        margin: 0 20px;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #9146FF;
+        text-shadow: 0 0 10px #9146FF;
+    }
+
+    /* --- TITRE --- */
+    h1 {
+        margin-top: 60px;
+        font-size: 40px;
+        color: #9146FF;
+        text-shadow: 0 0 6px #9146FF;
+        transition: 0.3s ease;
+    }
+
+    h1:hover {
+        color: #b57aff;
+        text-shadow: 0 0 12px #b57aff, 0 0 25px #d2a8ff;
+        transform: scale(1.05);
+    }
+
+    /* --- PLAYER TWITCH --- */
+    .player-container {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    iframe {
+        border: 4px solid #9146FF;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #9146FF;
+        transition: 0.3s ease;
+        max-width: 100%;
+    }
+
+    iframe:hover {
+        box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
+        transform: scale(1.02);
+    }
+
+    /* --- RÉSEAUX SOCIAUX --- */
+    .socials {
+        margin-top: 35px;
+        margin-bottom: 45px;
+    }
+
+    .socials h2 {
+        color: #9146FF;
+        font-size: 25px;
+        text-shadow: 0 0 8px #9146FF;
+        margin-bottom: 18px;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 9px 15px;
+        min-width: 95px;
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        font-size: 15px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .social-btn i {
+        font-size: 18px;
+    }
+
+    /* Twitch */
+    .twitch {
+        background: #9146FF;
+        box-shadow: 0 0 8px #9146FF;
+    }
+
+    .twitch:hover {
+        background: #772ce8;
+        box-shadow: 0 0 20px #9146FF;
+        transform: translateY(-3px);
+    }
+
+    /* YouTube */
+    .youtube {
+        background: #FF0000;
+        box-shadow: 0 0 8px #FF0000;
+    }
+
+    .youtube:hover {
+        background: #cc0000;
+        box-shadow: 0 0 20px #FF0000;
+        transform: translateY(-3px);
+    }
+
+    /* TikTok */
+    .tiktok {
+        background: #111111;
+        border: 1px solid #ffffff;
+        box-shadow: 0 0 8px #ffffff;
+    }
+
+    .tiktok:hover {
+        background: #000000;
+        box-shadow: 0 0 18px #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Instagram */
+    .instagram {
+        background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+        box-shadow: 0 0 10px #d62976;
+    }
+
+    .instagram:hover {
+        box-shadow: 0 0 20px #d62976, 0 0 30px #962fbf;
+        transform: translateY(-3px);
+    }
+
+    /* Discord */
+    .discord {
+        background: #5865F2;
+        box-shadow: 0 0 8px #5865F2;
+    }
+
+    .discord:hover {
+        background: #4752C4;
+        box-shadow: 0 0 20px #5865F2;
+        transform: translateY(-3px);
+    }
+
+    /* Soutien */
+    .support {
+        margin-top: 22px;
+    }
+
+    .support h3 {
+        color: #ccc;
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .donation {
+        background: #9146FF;
+        box-shadow: 0 0 8px #9146FF;
+    }
+
+    .donation:hover {
+        background: #b57aff;
+        box-shadow: 0 0 20px #9146FF, 0 0 30px #d2a8ff;
+        transform: translateY(-3px);
+    }
+
+    /* --- ANIMATION --- */
+    @keyframes fadeIn {
+        from {
             opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-        }
-        html.loaded { opacity: 1; }
-
-        /* NAVIGATION */
-        nav {
-            text-align: center;
-            padding: 20px;
-            background: rgba(17, 17, 17, 0.8);
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-size: 20px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #9146FF;
-            text-shadow: 0 0 10px #9146FF;
         }
 
-        /* TITRE */
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 700px) {
+
         h1 {
-            margin-top: 60px;
-            font-size: 40px;
-            color: #9146FF;
-            text-shadow: 0 0 6px #9146FF;
-            transition: 0.3s ease;
-        }
-        h1:hover {
-            color: #b57aff;
-            text-shadow: 0 0 12px #b57aff, 0 0 25px #d2a8ff;
-            transform: scale(1.05);
+            font-size: 32px;
+            margin-top: 40px;
         }
 
-        /* PLAYER TWITCH */
-        .player-container {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
+        nav a {
+            display: block;
+            margin: 10px 0;
+            font-size: 22px;
         }
 
         iframe {
-            border: 4px solid #9146FF;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #9146FF;
-            transition: 0.3s ease;
-            max-width: 100%;
+            width: 100%;
+            height: 300px;
         }
 
-        iframe:hover {
-            box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
-            transform: scale(1.02);
+        .social-btn {
+            min-width: 105px;
+            padding: 9px 12px;
+            font-size: 14px;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 700px) {
-            h1 { font-size: 32px; margin-top: 40px; }
-            nav a { display: block; margin: 10px 0; font-size: 22px; }
-            iframe { width: 100%; height: 300px; }
+        .social-btn i {
+            font-size: 17px;
         }
+    }
 
-        /* ANIMATION */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+```
 
-    </style>
 </head>
 
 <body>
@@ -124,6 +294,74 @@
         width="900"
         allowfullscreen>
     </iframe>
+</div>
+
+<!-- RÉSEAUX SOCIAUX -->
+
+<div class="socials">
+
+```
+<h2>Retrouvez-moi aussi sur 💜</h2>
+
+<div class="social-links">
+
+    <a class="social-btn twitch"
+       href="https://www.twitch.tv/louloutte_doris"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-twitch"></i>
+        Twitch
+    </a>
+
+    <a class="social-btn youtube"
+       href="https://www.youtube.com/@louloutte_doris"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-youtube"></i>
+        YouTube
+    </a>
+
+    <a class="social-btn tiktok"
+       href="https://www.tiktok.com/@louloutte_doris?lang=fr-CA"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-tiktok"></i>
+        TikTok
+    </a>
+
+    <a class="social-btn instagram"
+       href="https://www.instagram.com/louloutte_doris/reels/"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+    </a>
+
+    <a class="social-btn discord"
+       href="https://discord.gg/qScrgEYXYw"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-discord"></i>
+        Discord
+    </a>
+
+</div>
+
+<div class="support">
+
+    <h3>Envie de soutenir la chaîne ? 💜</h3>
+
+    <a class="social-btn donation"
+       href="https://streamelements.com/louloutte_doris/tip"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-solid fa-heart"></i>
+        Soutenir la chaîne
+    </a>
+
+</div>
+```
+
 </div>
 
 <script>
