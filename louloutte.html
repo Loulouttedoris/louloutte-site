@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live de Louloutte</title>
+
+<title>Live Twitch de Louloutte - Gaming en direct 💜</title>
+
+<meta name="description" content="Regardez le live Twitch de Louloutte en direct : gaming, bonne humeur et moments chill. Retrouvez également ses réseaux sociaux et soutenez la chaîne. 💜">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -12,17 +15,20 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    min-height: 100%;
     font-family: Arial, sans-serif;
     color: white;
+}
+
+body {
     background:
-        linear-gradient(rgba(15, 5, 25, 0.78), rgba(15, 5, 25, 0.88)),
-        url("https://loulouttedoris.github.io/louloutte-site/background.png")
-        center / cover fixed no-repeat;
-    text-align: center;
-    animation: fadeIn 0.8s ease-in;
+        linear-gradient(rgba(10, 5, 20, 0.75), rgba(10, 5, 20, 0.75)),
+        url("https://loulouttedoris.github.io/louloutte-site/background.png") center/cover fixed no-repeat;
+
+    animation: fadeIn 0.6s ease-in;
 }
 
 @keyframes fadeIn {
@@ -35,183 +41,195 @@ body {
     }
 }
 
+/* NAVIGATION */
+
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 12px;
+    padding: 20px 10px;
     flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    background: rgba(120, 40, 180, 0.35);
-    border: 1px solid #a855f7;
+    background: rgba(120, 60, 180, 0.35);
+    border: 1px solid rgba(190, 120, 255, 0.5);
     padding: 10px 18px;
     border-radius: 10px;
     transition: 0.25s;
 }
 
 nav a:hover {
-    background: rgba(168, 85, 247, 0.65);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    background: rgba(150, 80, 220, 0.6);
     transform: translateY(-2px);
 }
 
+/* CONTENU */
+
 .container {
-    width: 94%;
-    max-width: 1050px;
-    margin: 30px auto 50px;
-    padding: 30px 20px;
-    background: rgba(15, 5, 25, 0.65);
-    border: 1px solid rgba(168, 85, 247, 0.5);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(120, 40, 180, 0.25);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 180px;
+    max-width: 80%;
+    margin-bottom: 10px;
 }
 
 h1 {
-    color: #d8b4fe;
     font-size: 32px;
-    margin: 10px 0 25px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgba(180, 100, 255, 0.7);
 }
+
+/* LECTEUR TWITCH */
 
 .twitch-player {
     width: 100%;
     max-width: 900px;
-    height: 500px;
-    border: 2px solid #a855f7;
+    margin: 0 auto 35px;
     border-radius: 15px;
-    box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+    overflow: hidden;
+    border: 1px solid rgba(170, 90, 255, 0.6);
+    box-shadow: 0 0 25px rgba(120, 60, 180, 0.3);
+}
+
+.twitch-player iframe {
     display: block;
-    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    border: none;
 }
 
-.social-section {
-    margin-top: 35px;
-}
+/* RÉSEAUX SOCIAUX */
 
-.social-section h2 {
-    color: #d8b4fe;
-    font-size: 22px;
+h2 {
     margin-bottom: 18px;
+    text-shadow: 0 0 10px rgba(180, 100, 255, 0.5);
 }
 
-.social-buttons {
+.socials {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    margin-bottom: 35px;
 }
 
-.social-btn {
-    display: inline-flex;
+.socials a {
+    width: 44px;
+    height: 44px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    min-width: 95px;
-    padding: 9px 15px;
     border-radius: 10px;
     text-decoration: none;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 20px;
     transition: 0.25s;
 }
 
-.social-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+.socials a:hover {
+    transform: translateY(-3px);
 }
+
+/* TWITCH */
 
 .twitch {
     background: #9146ff;
+    color: white;
 }
+
+/* YOUTUBE */
 
 .youtube {
     background: #ff0000;
+    color: white;
 }
 
+/* TIKTOK */
+
 .tiktok {
-    background: #050505;
+    background: #000;
+    color: white;
     border: 1px solid white;
 }
 
+/* INSTAGRAM */
+
 .instagram {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+    background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5);
+    color: white;
 }
+
+/* DISCORD */
 
 .discord {
     background: #5865f2;
+    color: white;
 }
 
-.donation-section {
-    margin-top: 30px;
-    padding-top: 25px;
-    border-top: 1px solid rgba(216, 180, 254, 0.25);
+/* DON */
+
+.donation {
+    margin-top: 10px;
 }
 
-.donation-section h3 {
+.donation p {
+    color: #ddd;
     margin-bottom: 15px;
-    color: #e9d5ff;
-    font-size: 18px;
 }
 
-.donation-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 11px 20px;
-    border-radius: 10px;
-    background: #7e22ce;
+.donation a {
+    display: inline-block;
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    background: rgba(120, 60, 180, 0.55);
+    border: 1px solid rgba(190, 120, 255, 0.7);
+    padding: 11px 20px;
+    border-radius: 10px;
     transition: 0.25s;
 }
 
-.donation-button:hover {
-    background: #9333ea;
+.donation a:hover {
+    background: rgba(150, 80, 220, 0.75);
     transform: translateY(-2px);
-    box-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
 }
 
-@media (max-width: 700px) {
-    .container {
-        width: 94%;
-        padding: 25px 12px;
-        margin-top: 15px;
-    }
+/* MOBILE */
 
-    h1 {
-        font-size: 26px;
-    }
-
-    .twitch-player {
-        height: 400px;
-    }
-
-    .social-btn {
-        min-width: 105px;
-        padding: 10px 14px;
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .twitch-player {
-        height: 300px;
-    }
+@media (max-width: 600px) {
 
     nav {
         gap: 8px;
-        padding: 15px 10px;
     }
 
     nav a {
-        padding: 9px 13px;
+        padding: 9px 12px;
         font-size: 14px;
+    }
+
+    .container {
+        padding: 20px 15px 40px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .twitch-player iframe {
+        height: 300px;
+    }
+
+    .socials a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
     }
 }
 </style>
@@ -227,73 +245,93 @@ h1 {
 
 <div class="container">
 
+    <img
+        src="https://loulouttedoris.github.io/louloutte-site/logo.png"
+        alt="Logo Louloutte"
+        class="logo"
+    >
+
     <h1>Mon Live Twitch 🎥</h1>
 
-    <iframe
-        class="twitch-player"
-        src="https://player.twitch.tv/?channel=louloutte_doris&parent=loulouttedoris.github.io"
-        allowfullscreen>
-    </iframe>
+    <div class="twitch-player">
 
-    <div class="social-section">
+        <iframe
+            src="https://player.twitch.tv/?channel=louloutte_doris&parent=loulouttedoris.github.io"
+            allowfullscreen>
+        </iframe>
 
-        <h2>Retrouvez-moi aussi sur 💜</h2>
-
-        <div class="social-buttons">
-
-            <a class="social-btn twitch"
-               href="https://www.twitch.tv/louloutte_doris"
-               target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa-brands fa-twitch"></i>
-                Twitch
-            </a>
-
-            <a class="social-btn youtube"
-               href="https://www.youtube.com/@louloutte_doris"
-               target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa-brands fa-youtube"></i>
-                YouTube
-            </a>
-
-            <a class="social-btn tiktok"
-               href="https://www.tiktok.com/@louloutte_doris?lang=fr-CA"
-               target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa-brands fa-tiktok"></i>
-                TikTok
-            </a>
-
-            <a class="social-btn instagram"
-               href="https://www.instagram.com/louloutte_doris/reels/"
-               target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa-brands fa-instagram"></i>
-                Instagram
-            </a>
-
-            <a class="social-btn discord"
-               href="https://discord.gg/qScrgEYXYw"
-               target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa-brands fa-discord"></i>
-                Discord
-            </a>
-
-        </div>
     </div>
 
-    <div class="donation-section">
+    <h2>Retrouvez-moi aussi sur 💜</h2>
 
-        <h3>Envie de soutenir la chaîne ? 💜</h3>
+    <div class="socials">
 
-        <a class="donation-button"
-           href="https://streamelements.com/louloutte_doris/tip"
-           target="_blank"
-           rel="noopener noreferrer">
-            <i class="fa-solid fa-heart"></i>
-            Soutenir la chaîne
+        <a
+            class="twitch"
+            href="https://www.twitch.tv/louloutte_doris"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitch de Louloutte"
+        >
+            <i class="fa-brands fa-twitch"></i>
+        </a>
+
+        <a
+            class="youtube"
+            href="https://www.youtube.com/@louloutte_doris"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube de Louloutte"
+        >
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a
+            class="tiktok"
+            href="https://www.tiktok.com/@louloutte_doris?lang=fr-CA"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok de Louloutte"
+        >
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a
+            class="instagram"
+            href="https://www.instagram.com/louloutte_doris/reels/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Louloutte"
+        >
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a
+            class="discord"
+            href="https://discord.gg/qScrgEYXYw"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord de Louloutte"
+        >
+            <i class="fa-brands fa-discord"></i>
+        </a>
+
+    </div>
+
+    <div class="donation">
+
+        <h2>Envie de soutenir la chaîne ? 💜</h2>
+
+        <p>
+            Si tu souhaites soutenir Louloutte et contribuer au développement de la chaîne :
+        </p>
+
+        <a
+            href="https://streamelements.com/louloutte_doris/tip"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            💜 Soutenir la chaîne
         </a>
 
     </div>
