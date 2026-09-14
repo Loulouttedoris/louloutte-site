@@ -22,6 +22,7 @@
     >
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -34,7 +35,9 @@
         body {
             margin: 0;
             min-height: 100vh;
+
             font-family: Arial, sans-serif;
+
             color: white;
             text-align: center;
 
@@ -48,7 +51,13 @@
             animation: pageFade 0.6s ease;
         }
 
+
+        /* =========================
+           TRANSITION DE LA PAGE
+           ========================= */
+
         @keyframes pageFade {
+
             from {
                 opacity: 0;
             }
@@ -58,94 +67,194 @@
             }
         }
 
+
+        /* =========================
+           CONTENEUR
+           ========================= */
+
         .container {
+
             width: min(1200px, 92%);
+
             margin: 0 auto;
+
             padding: 35px 0 80px;
         }
 
+
+        /* =========================
+           LOGO
+           ========================= */
+
         .logo {
+
             width: 170px;
+
             max-width: 60%;
+
             margin-bottom: 20px;
         }
 
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
         nav {
+
             display: flex;
+
             justify-content: center;
+
             flex-wrap: wrap;
+
             gap: 10px;
+
             margin-bottom: 30px;
         }
 
         nav a {
+
             color: white;
+
             text-decoration: none;
+
             background: rgba(100, 40, 150, 0.35);
-            border: 1px solid rgba(190, 120, 255, 0.35);
+
+            border:
+                1px solid rgba(190, 120, 255, 0.35);
+
             padding: 9px 16px;
+
             border-radius: 20px;
+
             font-size: 0.9rem;
+
             transition: 0.25s;
         }
 
         nav a:hover {
-            background: rgba(150, 70, 220, 0.55);
+
+            background:
+                rgba(150, 70, 220, 0.55);
+
             transform: translateY(-2px);
         }
 
+
+        /* =========================
+           TITRE
+           ========================= */
+
         h1 {
+
             margin: 10px 0 12px;
+
             font-size: 2rem;
-            text-shadow: 0 0 15px rgba(190, 120, 255, 0.45);
+
+            text-shadow:
+                0 0 15px rgba(190, 120, 255, 0.45);
         }
 
+
+        /* =========================
+           INTRODUCTION
+           ========================= */
+
         .intro {
+
             max-width: 700px;
+
             margin: 0 auto 20px;
+
             line-height: 1.6;
+
             color: #e8ddf2;
+
             font-size: 0.98rem;
         }
 
+
+        /* =========================
+           BOUTON LIVE
+           ========================= */
+
         .live-link {
+
             display: inline-block;
+
             margin-bottom: 30px;
+
             padding: 10px 18px;
+
             border-radius: 20px;
+
             text-decoration: none;
+
             color: white;
-            background: rgba(120, 50, 180, 0.4);
-            border: 1px solid rgba(200, 130, 255, 0.4);
+
+            background:
+                rgba(120, 50, 180, 0.4);
+
+            border:
+                1px solid rgba(200, 130, 255, 0.4);
+
             transition: 0.25s;
         }
 
         .live-link:hover {
-            background: rgba(150, 70, 220, 0.6);
+
+            background:
+                rgba(150, 70, 220, 0.6);
+
             transform: translateY(-2px);
         }
 
+
+        /* =========================
+           GRILLE
+           ========================= */
+
         .team {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 18px;
 
-            /* Espace sous la dernière rangée */
             padding-bottom: 55px;
         }
 
+
+        /* =========================
+           CARTE
+           ========================= */
+
         .card {
+
             display: block;
+
+            position: relative;
+
             text-decoration: none;
+
             color: white;
 
-            background: rgba(20, 10, 35, 0.68);
-            border: 1px solid rgba(190, 120, 255, 0.3);
+            background:
+                rgba(20, 10, 35, 0.68);
+
+            border:
+                1px solid rgba(190, 120, 255, 0.3);
+
             border-radius: 18px;
 
             padding: 20px 12px;
 
-            box-shadow: 0 0 18px rgba(150, 70, 220, 0.12);
+            box-shadow:
+                0 0 18px
+                rgba(150, 70, 220, 0.12);
 
             transition:
                 transform 0.25s ease,
@@ -154,19 +263,51 @@
         }
 
         .card:hover {
+
             transform: translateY(-5px);
-            border-color: rgba(210, 150, 255, 0.55);
-            box-shadow: 0 0 25px rgba(150, 70, 220, 0.25);
+
+            border-color:
+                rgba(210, 150, 255, 0.55);
+
+            box-shadow:
+                0 0 25px
+                rgba(150, 70, 220, 0.25);
         }
 
-        .avatar {
+
+        /* =========================
+           CONTENEUR AVATAR
+           ========================= */
+
+        .avatar-wrapper {
+
+            position: relative;
+
             width: 130px;
+
+            height: 145px;
+
+            margin: 0 auto 2px;
+        }
+
+
+        /* =========================
+           AVATAR
+           ========================= */
+
+        .avatar {
+
+            width: 130px;
+
             height: 130px;
 
             border-radius: 50%;
+
             object-fit: cover;
 
-            border: 3px solid rgba(190, 120, 255, 0.55);
+            border:
+                3px solid
+                rgba(190, 120, 255, 0.55);
 
             margin-bottom: 12px;
 
@@ -175,57 +316,291 @@
                 box-shadow 0.25s ease;
         }
 
-        .name {
-            margin: 0 0 6px;
-            font-size: 1.05rem;
-            font-weight: bold;
-        }
-
-        .status {
-            margin: 0;
-            font-size: 0.85rem;
-            color: #cdb8dc;
-        }
 
         /* =========================
-           EFFET LIVE ROUGE
+           👑 COURONNE DE LOULOUTTE
            ========================= */
 
-        @keyframes livePulse {
+        .royal-crown {
+
+            position: absolute;
+
+            width: 58px;
+
+            height: 42px;
+
+            top: -17px;
+
+            right: -11px;
+
+            z-index: 5;
+
+            overflow: visible;
+
+            color: #c77dff;
+
+            filter:
+                drop-shadow(
+                    0 0 4px
+                    rgba(199, 125, 255, 0.65)
+                );
+
+            animation:
+                crownFloat 3s ease-in-out infinite;
+        }
+
+
+        /* Couronne qui flotte délicatement */
+
+        @keyframes crownFloat {
+
             0%,
             100% {
-                border-color: #ff2020;
 
-                box-shadow:
-                    0 0 12px rgba(255, 40, 40, 0.45),
-                    0 0 25px rgba(255, 40, 40, 0.25);
+                transform:
+                    translateY(0)
+                    rotate(2deg);
+
+                filter:
+                    drop-shadow(
+                        0 0 4px
+                        rgba(199, 125, 255, 0.6)
+                    );
             }
 
             50% {
-                border-color: #ff6060;
 
-                box-shadow:
-                    0 0 25px rgba(255, 40, 40, 0.95),
-                    0 0 50px rgba(255, 40, 40, 0.7),
-                    0 0 75px rgba(255, 40, 40, 0.3);
+                transform:
+                    translateY(-5px)
+                    rotate(-2deg);
+
+                filter:
+                    drop-shadow(
+                        0 0 10px
+                        rgba(199, 125, 255, 0.95)
+                    )
+                    drop-shadow(
+                        0 0 18px
+                        rgba(170, 80, 255, 0.45)
+                    );
             }
         }
 
-        .live .avatar {
-            border-color: #ff2020;
-            animation: livePulse 1.5s ease-in-out infinite;
+
+        /* =========================
+           COURONNE EN LIVE
+           ========================= */
+
+        .live .royal-crown {
+
+            animation:
+                crownLivePulse 1.8s ease-in-out infinite;
         }
 
-        .live .status {
-            color: #ff4b4b;
+
+        @keyframes crownLivePulse {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(2deg)
+                    scale(1);
+
+                color: #b965ff;
+
+                filter:
+                    drop-shadow(
+                        0 0 5px
+                        rgba(190, 90, 255, 0.65)
+                    );
+            }
+
+            50% {
+
+                transform:
+                    translateY(-6px)
+                    rotate(-2deg)
+                    scale(1.08);
+
+                color: #e0a6ff;
+
+                filter:
+                    drop-shadow(
+                        0 0 9px
+                        rgba(210, 120, 255, 1)
+                    )
+                    drop-shadow(
+                        0 0 20px
+                        rgba(175, 70, 255, 0.85)
+                    )
+                    drop-shadow(
+                        0 0 32px
+                        rgba(150, 50, 255, 0.5)
+                    );
+            }
+        }
+
+
+        /* =========================
+           NOM
+           ========================= */
+
+        .name {
+
+            margin: 0 0 6px;
+
+            font-size: 1.05rem;
+
             font-weight: bold;
         }
 
+
+        /* =========================
+           STATUT
+           ========================= */
+
+        .status {
+
+            margin: 0;
+
+            font-size: 0.85rem;
+
+            color: #cdb8dc;
+        }
+
+
+        /* ==================================================
+           🔴 NÉON ROUGE LIVE
+           ================================================== */
+
+        @keyframes neonLivePulse {
+
+            0% {
+
+                border-color: #720000;
+
+                box-shadow:
+                    0 0 4px
+                    rgba(255, 0, 0, 0.12),
+
+                    0 0 8px
+                    rgba(255, 0, 0, 0.06);
+
+                filter: brightness(0.82);
+            }
+
+
+            25% {
+
+                border-color: #ff2020;
+
+                box-shadow:
+                    0 0 10px
+                    rgba(255, 0, 0, 0.55),
+
+                    0 0 20px
+                    rgba(255, 0, 0, 0.35),
+
+                    0 0 35px
+                    rgba(255, 0, 0, 0.18);
+
+                filter: brightness(1.05);
+            }
+
+
+            50% {
+
+                border-color: #ff7070;
+
+                box-shadow:
+                    0 0 18px
+                    rgba(255, 0, 0, 0.95),
+
+                    0 0 35px
+                    rgba(255, 0, 0, 0.75),
+
+                    0 0 60px
+                    rgba(255, 0, 0, 0.45);
+
+                filter: brightness(1.28);
+            }
+
+
+            75% {
+
+                border-color: #ff2020;
+
+                box-shadow:
+                    0 0 10px
+                    rgba(255, 0, 0, 0.55),
+
+                    0 0 20px
+                    rgba(255, 0, 0, 0.35),
+
+                    0 0 35px
+                    rgba(255, 0, 0, 0.18);
+
+                filter: brightness(1.05);
+            }
+
+
+            100% {
+
+                border-color: #720000;
+
+                box-shadow:
+                    0 0 4px
+                    rgba(255, 0, 0, 0.12),
+
+                    0 0 8px
+                    rgba(255, 0, 0, 0.06);
+
+                filter: brightness(0.82);
+            }
+        }
+
+
+        .live .avatar {
+
+            animation:
+                neonLivePulse
+                1.8s
+                ease-in-out
+                infinite;
+        }
+
+
+        /* =========================
+           TEXTE EN LIVE
+           ========================= */
+
+        .live .status {
+
+            color: #ff3030;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 8px
+                rgba(255, 30, 30, 0.65);
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
         footer {
+
             margin-top: 10px;
+
             color: #bba8c9;
+
             font-size: 0.8rem;
         }
+
 
         /* =========================
            TABLETTE
@@ -234,10 +609,14 @@
         @media (max-width: 800px) {
 
             .team {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
                 padding-bottom: 50px;
             }
         }
+
 
         /* =========================
            MOBILE
@@ -246,63 +625,122 @@
         @media (max-width: 550px) {
 
             .container {
+
                 width: 90%;
+
                 padding-top: 25px;
+
                 padding-bottom: 65px;
             }
 
+
             .logo {
+
                 width: 145px;
             }
 
+
             h1 {
+
                 font-size: 1.55rem;
             }
 
+
             .intro {
+
                 font-size: 0.9rem;
             }
 
+
             .team {
+
                 grid-template-columns: 1fr;
+
                 gap: 15px;
+
                 padding-bottom: 40px;
             }
 
+
             .card {
+
                 padding: 18px 10px;
             }
 
-            .avatar {
+
+            .avatar-wrapper {
+
                 width: 110px;
+
+                height: 125px;
+            }
+
+
+            .avatar {
+
+                width: 110px;
+
                 height: 110px;
+
                 margin-bottom: 10px;
+            }
+
+
+            .royal-crown {
+
+                width: 50px;
+
+                height: 36px;
+
+                top: -15px;
+
+                right: -10px;
             }
         }
 
-        /* Respecte les réglages d'accessibilité */
+
+        /* =========================
+           ACCESSIBILITÉ
+           ========================= */
+
         @media (prefers-reduced-motion: reduce) {
 
             body {
+
                 animation: none;
             }
 
             .live .avatar {
+
+                animation: none;
+            }
+
+            .royal-crown,
+            .live .royal-crown {
+
                 animation: none;
             }
 
             .card,
             nav a,
             .live-link {
+
                 transition: none;
             }
         }
+
     </style>
 </head>
+
 
 <body>
 
     <div class="container">
+
+
+        <!-- =========================
+             LOGO
+             ========================= -->
 
         <img
             src="logo.png"
@@ -310,27 +748,77 @@
             class="logo"
         >
 
+
+        <!-- =========================
+             NAVIGATION
+             ========================= -->
+
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="team.html">Affiliés Twitch</a>
-            <a href="louloutte.html">Mon Live</a>
+
+            <a href="index.html">
+                Accueil
+            </a>
+
+            <a href="team.html">
+                Affiliés Twitch
+            </a>
+
+            <a href="louloutte.html">
+                Mon Live
+            </a>
+
         </nav>
 
-        <h1>Les Affiliés de la Team Louloutte 💜</h1>
+
+        <!-- =========================
+             TITRE
+             ========================= -->
+
+        <h1>
+            Les Affiliés de la Team Louloutte 💜
+        </h1>
+
+
+        <!-- =========================
+             INTRO
+             ========================= -->
 
         <p class="intro">
+
             Découvrez les créateurs qui font partie de la Team Louloutte.<br>
+
             Cliquez sur un profil pour découvrir sa chaîne Twitch et soutenir son univers.
+
         </p>
+
+
+        <!-- =========================
+             BOUTON LIVE
+             ========================= -->
 
         <a
             class="live-link"
             href="louloutte.html"
         >
+
             🎥 Voir le Live Twitch de Louloutte
+
         </a>
 
-        <div class="team" id="team">
+
+        <!-- =========================
+             TEAM
+             ========================= -->
+
+        <div
+            class="team"
+            id="team"
+        >
+
+
+            <!-- =========================
+                 LOULOUTTE — REINE 👑
+                 ========================= -->
 
             <a
                 class="card"
@@ -339,15 +827,79 @@
                 rel="noopener noreferrer"
                 data-username="louloutte_doris"
             >
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de louloutte_doris"
-                >
 
-                <p class="name">louloutte_doris</p>
-                <p class="status">Chargement...</p>
+                <div class="avatar-wrapper">
+
+                    <img
+                        class="avatar"
+                        src=""
+                        alt="Avatar de louloutte_doris"
+                    >
+
+
+                    <!-- Couronne SVG élégante -->
+
+                    <svg
+                        class="royal-crown"
+                        viewBox="0 0 100 75"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-label="Couronne de la reine du site"
+                    >
+
+                        <path
+                            d="M10 18
+                               L27 34
+                               L39 11
+                               L50 36
+                               L62 11
+                               L74 34
+                               L90 18
+                               L82 61
+                               L18 61
+                               Z"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M18 61
+                               C35 67 65 67 82 61"
+                            stroke="currentColor"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M22 52
+                               C38 56 62 56 78 52"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            opacity="0.75"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <p class="name">
+                    louloutte_doris
+                </p>
+
+                <p class="status">
+                    Chargement...
+                </p>
+
             </a>
+
+
+            <!-- =========================
+                 ADREN4LINE
+                 ========================= -->
 
             <a
                 class="card"
@@ -356,15 +908,31 @@
                 rel="noopener noreferrer"
                 data-username="adren4line_"
             >
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de adren4line_"
-                >
 
-                <p class="name">adren4line_</p>
-                <p class="status">Chargement...</p>
+                <div class="avatar-wrapper">
+
+                    <img
+                        class="avatar"
+                        src=""
+                        alt="Avatar de adren4line_"
+                    >
+
+                </div>
+
+                <p class="name">
+                    adren4line_
+                </p>
+
+                <p class="status">
+                    Chargement...
+                </p>
+
             </a>
+
+
+            <!-- =========================
+                 STEROBAN
+                 ========================= -->
 
             <a
                 class="card"
@@ -373,15 +941,31 @@
                 rel="noopener noreferrer"
                 data-username="steroban_tv"
             >
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de steroban_tv"
-                >
 
-                <p class="name">steroban_tv</p>
-                <p class="status">Chargement...</p>
+                <div class="avatar-wrapper">
+
+                    <img
+                        class="avatar"
+                        src=""
+                        alt="Avatar de steroban_tv"
+                    >
+
+                </div>
+
+                <p class="name">
+                    steroban_tv
+                </p>
+
+                <p class="status">
+                    Chargement...
+                </p>
+
             </a>
+
+
+            <!-- =========================
+                 SERIZAWA
+                 ========================= -->
 
             <a
                 class="card"
@@ -390,15 +974,31 @@
                 rel="noopener noreferrer"
                 data-username="serizawa5714"
             >
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de serizawa5714"
-                >
 
-                <p class="name">serizawa5714</p>
-                <p class="status">Chargement...</p>
+                <div class="avatar-wrapper">
+
+                    <img
+                        class="avatar"
+                        src=""
+                        alt="Avatar de serizawa5714"
+                    >
+
+                </div>
+
+                <p class="name">
+                    serizawa5714
+                </p>
+
+                <p class="status">
+                    Chargement...
+                </p>
+
             </a>
+
+
+            <!-- =========================
+                 PIKHARLEYQUINN
+                 ========================= -->
 
             <a
                 class="card"
@@ -407,15 +1007,31 @@
                 rel="noopener noreferrer"
                 data-username="pikharleyquinn"
             >
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de pikharleyquinn"
-                >
 
-                <p class="name">pikharleyquinn</p>
-                <p class="status">Chargement...</p>
+                <div class="avatar-wrapper">
+
+                    <img
+                        class="avatar"
+                        src=""
+                        alt="Avatar de pikharleyquinn"
+                    >
+
+                </div>
+
+                <p class="name">
+                    pikharleyquinn
+                </p>
+
+                <p class="status">
+                    Chargement...
+                </p>
+
             </a>
+
+
+            <!-- =========================
+                 MICKY
+                 ========================= -->
 
             <a
                 class="card"
@@ -424,46 +1040,92 @@
                 rel="noopener noreferrer"
                 data-username="micky__rcs67"
             >
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de micky__rcs67"
-                >
 
-                <p class="name">micky__rcs67</p>
-                <p class="status">Chargement...</p>
+                <div class="avatar-wrapper">
+
+                    <img
+                        class="avatar"
+                        src=""
+                        alt="Avatar de micky__rcs67"
+                    >
+
+                </div>
+
+                <p class="name">
+                    micky__rcs67
+                </p>
+
+                <p class="status">
+                    Chargement...
+                </p>
+
             </a>
 
         </div>
 
+
+        <!-- =========================
+             FOOTER
+             ========================= -->
+
         <footer>
+
             © Louloutte — Team Louloutte 💜
+
         </footer>
 
     </div>
 
+
     <script>
+
+
+        /* ==================================================
+           VÉRIFICATION D'UN MEMBRE
+           ================================================== */
 
         async function checkMember(card) {
 
-            const username = card.dataset.username;
-            const avatar = card.querySelector(".avatar");
-            const status = card.querySelector(".status");
+
+            const username =
+                card.dataset.username;
+
+
+            const avatar =
+                card.querySelector(".avatar");
+
+
+            const status =
+                card.querySelector(".status");
+
 
             let isLive = false;
 
-            /* Récupération de l'avatar Twitch */
+
+            /* =========================
+               RÉCUPÉRATION DE L'AVATAR
+               ========================= */
+
             try {
 
-                const response = await fetch(
-                    "https://decapi.me/twitch/avatar/" + username
-                );
+                const response =
+                    await fetch(
+                        "https://decapi.me/twitch/avatar/" + username
+                    );
 
-                const avatarUrl = await response.text();
-                const url = avatarUrl.trim();
+
+                const avatarUrl =
+                    await response.text();
+
+
+                const url =
+                    avatarUrl.trim();
+
 
                 if (url.startsWith("http")) {
+
                     avatar.src = url;
+
                 }
 
             } catch (error) {
@@ -472,17 +1134,25 @@
                     "Impossible de récupérer l'avatar de " + username,
                     error
                 );
+
             }
 
 
-            /* Vérification du live */
+            /* =========================
+               VÉRIFICATION DU LIVE
+               ========================= */
+
             try {
 
-                const response = await fetch(
-                    "https://decapi.me/twitch/uptime/" + username
-                );
+                const response =
+                    await fetch(
+                        "https://decapi.me/twitch/uptime/" + username
+                    );
 
-                const result = await response.text();
+
+                const result =
+                    await response.text();
+
 
                 if (
                     result &&
@@ -492,11 +1162,14 @@
                     isLive = true;
 
                     card.classList.add("live");
-                    status.textContent = "🔴 EN LIVE";
+
+                    status.textContent =
+                        "🔴 EN LIVE";
 
                 } else {
 
-                    status.textContent = "Hors ligne";
+                    status.textContent =
+                        "Hors ligne";
                 }
 
             } catch (error) {
@@ -506,61 +1179,98 @@
                     error
                 );
 
-                status.textContent = "Hors ligne";
+                status.textContent =
+                    "Hors ligne";
             }
 
 
             return {
+
                 card: card,
+
                 name: username,
+
                 isLive: isLive
             };
         }
 
 
+
+        /* ==================================================
+           CHARGEMENT ET TRI DE LA TEAM
+           ================================================== */
+
         async function loadTeam() {
 
-            const team = document.getElementById("team");
 
-            const cards = Array.from(
-                team.querySelectorAll(".card")
-            );
+            const team =
+                document.getElementById("team");
 
 
-            const members = await Promise.all(
-                cards.map(card => checkMember(card))
-            );
+            const cards =
+                Array.from(
+                    team.querySelectorAll(".card")
+                );
+
+
+            const members =
+                await Promise.all(
+                    cards.map(
+                        card => checkMember(card)
+                    )
+                );
 
 
             /*
-                Tri automatique :
+                TRI AUTOMATIQUE :
 
-                1. Les membres EN LIVE en premier
-                2. Alphabétique parmi les membres en live
-                3. Alphabétique parmi les membres hors ligne
+                1. Les membres EN LIVE
+                2. Alphabétique parmi les lives
+                3. Alphabétique parmi les hors ligne
             */
 
-            members.sort((a, b) => {
+            members.sort(
+                (a, b) => {
 
-                if (a.isLive !== b.isLive) {
-                    return a.isLive ? -1 : 1;
-                }
 
-                return a.name.localeCompare(
-                    b.name,
-                    "fr",
-                    {
-                        sensitivity: "base"
+                    if (
+                        a.isLive !== b.isLive
+                    ) {
+
+                        return a.isLive
+                            ? -1
+                            : 1;
                     }
-                );
-            });
 
 
-            members.forEach(member => {
-                team.appendChild(member.card);
-            });
+                    return a.name.localeCompare(
+                        b.name,
+                        "fr",
+                        {
+                            sensitivity: "base"
+                        }
+                    );
+
+                }
+            );
+
+
+            members.forEach(
+                member => {
+
+                    team.appendChild(
+                        member.card
+                    );
+
+                }
+            );
+
         }
 
+
+        /* =========================
+           LANCEMENT
+           ========================= */
 
         loadTeam();
 
