@@ -1,8 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Accueil - Louloutte</title>
+
+    <!-- Font Awesome pour les logos des réseaux -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
 
@@ -25,25 +29,31 @@
         body::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.4);
             z-index: -1;
         }
 
-        /* Transition */
+        /* --- TRANSITION --- */
         html {
             opacity: 0;
             transition: opacity 0.6s ease-in-out;
         }
-        html.loaded { opacity: 1; }
 
-        /* NAV */
+        html.loaded {
+            opacity: 1;
+        }
+
+        /* --- NAVIGATION --- */
         nav {
             text-align: center;
             padding: 20px;
             background: rgba(17, 17, 17, 0.8);
         }
+
         nav a {
             color: white;
             margin: 0 20px;
@@ -51,12 +61,13 @@
             font-size: 20px;
             transition: 0.3s;
         }
+
         nav a:hover {
             color: #9146FF;
             text-shadow: 0 0 10px #9146FF;
         }
 
-        /* TITRE */
+        /* --- TITRE --- */
         h1 {
             margin-top: 60px;
             font-size: 40px;
@@ -64,13 +75,14 @@
             text-shadow: 0 0 6px #9146FF;
             transition: 0.3s ease;
         }
+
         h1:hover {
             color: #b57aff;
             text-shadow: 0 0 12px #b57aff, 0 0 25px #d2a8ff;
             transform: scale(1.05);
         }
 
-        /* TEXTE */
+        /* --- TEXTE --- */
         p {
             font-size: 20px;
             margin-top: 20px;
@@ -80,14 +92,18 @@
             margin-right: auto;
             line-height: 1.6;
         }
+
         .cta {
             font-size: 22px;
             margin-top: 25px;
             font-weight: bold;
         }
 
-        /* BOUTONS */
-        .buttons { margin-top: 40px; }
+        /* --- BOUTONS --- */
+        .buttons {
+            margin-top: 40px;
+        }
+
         .btn {
             display: inline-block;
             padding: 15px 30px;
@@ -100,21 +116,139 @@
             transition: 0.25s;
             box-shadow: 0 0 12px #9146FF;
         }
+
         .btn:hover {
             background: #b57aff;
             box-shadow: 0 0 25px #b57aff, 0 0 40px #d2a8ff;
             transform: scale(1.05);
         }
 
-        /* ANIMATION */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* --- RÉSEAUX SOCIAUX --- */
+        .socials {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
 
-        /* RESPONSIVE */
+        .socials h2 {
+            color: #9146FF;
+            font-size: 30px;
+            text-shadow: 0 0 8px #9146FF;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 24px;
+            min-width: 120px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .social-btn i {
+            font-size: 22px;
+        }
+
+        /* Twitch */
+        .twitch {
+            background: #9146FF;
+            box-shadow: 0 0 10px #9146FF;
+        }
+
+        .twitch:hover {
+            background: #772ce8;
+            box-shadow: 0 0 25px #9146FF, 0 0 40px #b57aff;
+            transform: scale(1.08);
+        }
+
+        /* YouTube */
+        .youtube {
+            background: #FF0000;
+            box-shadow: 0 0 10px #FF0000;
+        }
+
+        .youtube:hover {
+            background: #cc0000;
+            box-shadow: 0 0 25px #FF0000;
+            transform: scale(1.08);
+        }
+
+        /* TikTok */
+        .tiktok {
+            background: #111111;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 10px #ffffff;
+        }
+
+        .tiktok:hover {
+            background: #000000;
+            box-shadow: 0 0 20px #ffffff;
+            transform: scale(1.08);
+        }
+
+        /* Instagram */
+        .instagram {
+            background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            box-shadow: 0 0 12px #d62976;
+        }
+
+        .instagram:hover {
+            box-shadow: 0 0 25px #d62976, 0 0 40px #962fbf;
+            transform: scale(1.08);
+        }
+
+        /* --- ANIMATION --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 600px) {
-            h1 { font-size: 32px; margin-top: 40px; }
-            nav a { display: block; margin: 10px 0; font-size: 22px; }
-            p { font-size: 18px; padding: 0 15px; }
-            .btn { width: 80%; font-size: 18px; }
+
+            h1 {
+                font-size: 32px;
+                margin-top: 40px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 18px;
+                padding: 0 15px;
+            }
+
+            .btn {
+                width: 80%;
+                font-size: 18px;
+            }
+
+            .social-btn {
+                width: 80%;
+                box-sizing: border-box;
+            }
         }
 
     </style>
@@ -133,16 +267,61 @@
 <p>
     Un espace entièrement dédié à nos streamers affiliés Twitch : un lieu où le gaming rencontre la bonne vibe, où l’ambiance reste chill, et où des créateurs passionnés peuvent enfin briller comme ils le méritent.
 
-Ici, chaque talent a sa place. Cet espace existe pour leur offrir une vraie visibilité, pour mettre en avant leur travail, leur énergie et leur univers.
+    Ici, chaque talent a sa place. Cet espace existe pour leur offrir une vraie visibilité, pour mettre en avant leur travail, leur énergie et leur univers.
 
-Merci d’être présent — chaque follow, chaque partage, chaque mot d’encouragement fait une différence réelle. Ensemble, on aide ces créateurs à grandir, à se faire découvrir et à aller encore plus loin.
+    Merci d’être présent — chaque follow, chaque partage, chaque mot d’encouragement fait une différence réelle. Ensemble, on aide ces créateurs à grandir, à se faire découvrir et à aller encore plus loin.
 </p>
 
-<p class="cta">👉 Soutiens les affiliés : découvre, follow et partage.</p>
+<p class="cta">
+    👉 Soutiens les affiliés : découvre, follow et partage.
+</p>
 
 <div class="buttons">
     <a class="btn" href="/louloutte-site/louloutte.html">🎥 Voir mon live</a>
     <a class="btn" href="/louloutte-site/team.html">💜 Voir la Team</a>
+</div>
+
+<!-- RÉSEAUX SOCIAUX -->
+<div class="socials">
+
+    <h2>Retrouvez-moi sur 💜</h2>
+
+    <div class="social-links">
+
+        <a class="social-btn twitch"
+           href="https://www.twitch.tv/louloutte_doris"
+           target="_blank"
+           rel="noopener noreferrer">
+            <i class="fa-brands fa-twitch"></i>
+            Twitch
+        </a>
+
+        <a class="social-btn youtube"
+           href="https://www.youtube.com/@louloutte_doris"
+           target="_blank"
+           rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+            YouTube
+        </a>
+
+        <a class="social-btn tiktok"
+           href="https://www.tiktok.com/@louloutte_doris?lang=fr-CA"
+           target="_blank"
+           rel="noopener noreferrer">
+            <i class="fa-brands fa-tiktok"></i>
+            TikTok
+        </a>
+
+        <a class="social-btn instagram"
+           href="https://www.instagram.com/louloutte_doris/reels/"
+           target="_blank"
+           rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+        </a>
+
+    </div>
+
 </div>
 
 <script>
@@ -151,3 +330,4 @@ Merci d’être présent — chaque follow, chaque partage, chaque mot d’encou
 
 </body>
 </html>
+```
