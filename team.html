@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -61,24 +60,29 @@
         }
 
         header {
-            text-align: center;
-            padding: 25px 15px 10px;
+            height: 175px;
+            padding: 25px 20px 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
         }
 
         .logo {
-            width: 150px;
-            max-width: 60%;
+            width: 180px;
+            max-width: 70%;
             height: auto;
-            margin-bottom: 12px;
+            display: block;
         }
 
         nav {
+            min-height: 62px;
             display: flex;
+            align-items: center;
             justify-content: center;
+            gap: 12px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 10px auto 30px;
-            padding: 0 15px;
+            margin: 0 auto 25px;
+            padding: 0 20px;
         }
 
         nav a {
@@ -235,13 +239,6 @@
                 filter 0.2s ease;
         }
 
-        /*
-         * 🔴 EFFET LIVE
-         *
-         * L'avatar passe progressivement :
-         * faible → rouge → très lumineux → rouge → faible
-         */
-
         @keyframes neonLivePulse {
 
             0% {
@@ -335,10 +332,6 @@
                 0 0 8px rgba(255, 30, 30, 0.75),
                 0 0 16px rgba(255, 0, 0, 0.4);
         }
-
-        /*
-         * 👑 COURONNE DE LOULOUTTE
-         */
 
         .queen-crown {
             position: absolute;
@@ -454,12 +447,14 @@
         @media (max-width: 550px) {
 
             nav {
-                gap: 7px;
+                min-height: 58px;
+                padding: 0 12px;
+                gap: 8px;
             }
 
             nav a {
-                padding: 9px 12px;
-                font-size: 13px;
+                padding: 9px 14px;
+                font-size: 0.9rem;
             }
 
             .team {
@@ -488,6 +483,11 @@
                 font-size: 0.7rem;
             }
 
+            header {
+                height: 155px;
+                padding-top: 20px;
+            }
+
         }
 
     </style>
@@ -503,27 +503,27 @@
             class="logo"
         >
 
-        <nav>
-
-            <a href="index.html">
-                Accueil
-            </a>
-
-            <a href="team.html">
-                Affiliés Twitch
-            </a>
-
-            <a href="louloutte.html">
-                Mon Live
-            </a>
-
-            <a href="bestof.html">
-                Best Of Louloutte
-            </a>
-
-        </nav>
-
     </header>
+
+    <nav>
+
+        <a href="index.html">
+            Accueil
+        </a>
+
+        <a href="team.html">
+            Affiliés Twitch
+        </a>
+
+        <a href="louloutte.html">
+            Mon Live
+        </a>
+
+        <a href="bestof.html">
+            Best Of Louloutte
+        </a>
+
+    </nav>
 
     <main>
 
@@ -545,8 +545,6 @@
         </a>
 
         <section class="team" id="team">
-
-            <!-- LOULOUTTE -->
 
             <a
                 class="card"
@@ -616,9 +614,6 @@
 
             </a>
 
-
-            <!-- ADREN4LINE -->
-
             <a
                 class="card"
                 href="https://www.twitch.tv/adren4line_"
@@ -642,9 +637,6 @@
                 </p>
 
             </a>
-
-
-            <!-- STEROBAN -->
 
             <a
                 class="card"
@@ -670,9 +662,6 @@
 
             </a>
 
-
-            <!-- SERIZAWA -->
-
             <a
                 class="card"
                 href="https://www.twitch.tv/serizawa5714"
@@ -697,9 +686,6 @@
 
             </a>
 
-
-            <!-- PIKHARLEYQUINN -->
-
             <a
                 class="card"
                 href="https://www.twitch.tv/pikharleyquinn"
@@ -723,9 +709,6 @@
                 </p>
 
             </a>
-
-
-            <!-- MICKY -->
 
             <a
                 class="card"
@@ -760,7 +743,6 @@
         Aucun renseignement personnel n’est volontairement collecté par ce site.
     </footer>
 
-
     <script>
 
         async function checkMember(card) {
@@ -771,10 +753,6 @@
             const status = card.querySelector(".status");
 
             let isLive = false;
-
-            /*
-             * Récupération de l'avatar Twitch
-             */
 
             try {
 
@@ -798,11 +776,6 @@
                 );
 
             }
-
-
-            /*
-             * Vérification du live Twitch
-             */
 
             try {
 
@@ -840,7 +813,6 @@
 
             }
 
-
             return {
                 card: card,
                 name: username,
@@ -848,7 +820,6 @@
             };
 
         }
-
 
         async function loadTeam() {
 
@@ -858,18 +829,9 @@
                 team.querySelectorAll(".card")
             );
 
-
             const members = await Promise.all(
                 cards.map(card => checkMember(card))
             );
-
-
-            /*
-             * Les membres en live passent en premier.
-             *
-             * À l'intérieur de chaque groupe :
-             * classement alphabétique.
-             */
 
             members.sort((a, b) => {
 
@@ -889,11 +851,6 @@
 
             });
 
-
-            /*
-             * Réorganisation automatique des cartes
-             */
-
             members.forEach(member => {
 
                 team.appendChild(member.card);
@@ -902,11 +859,9 @@
 
         }
 
-
         loadTeam();
 
     </script>
 
 </body>
 </html>
-```
