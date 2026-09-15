@@ -1,0 +1,38 @@
+name: Mettre à jour le Best Of Louloutte
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-bestof:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le site
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Installer les dépendances
+        run: pip install requests
+
+      - name: Mettre à jour le Top 5
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python update_bestof.py
+
+      - name: Enregistrer les changements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bestof.html
+          git commit -m "Mise à jour automatique du Best Of" || echo "Aucune modification"
+          git push
