@@ -1,8 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,20 +17,21 @@
         href="https://loulouttedoris.github.io/louloutte-site/bestof.html"
     >
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
     <style>
 
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            font-family: Arial, Helvetica, sans-serif;
             color: white;
 
             background:
@@ -40,138 +39,152 @@
                     rgba(10, 5, 20, 0.72),
                     rgba(10, 5, 20, 0.82)
                 ),
-                url("background.png") center / cover fixed;
+                url("background.png") center center / cover fixed no-repeat;
 
-            min-height: 100vh;
+            animation: pageFade 0.8s ease;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 5, 25, 0.25);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .page {
-            width: min(1200px, 94%);
-            margin: auto;
-            padding: 30px 0 60px;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
+        @keyframes pageFade {
 
             from {
                 opacity: 0;
-                transform: translateY(8px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
 
         }
 
         header {
-            text-align: center;
-            margin-bottom: 25px;
+            height: 175px;
+            padding: 25px 20px 10px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
         }
 
         .logo {
-            width: 130px;
-            max-width: 45%;
-            margin-bottom: 12px;
+            width: 180px;
+            max-width: 70%;
+            height: auto;
+            display: block;
         }
 
         nav {
+            min-height: 62px;
+
             display: flex;
+            align-items: center;
             justify-content: center;
+
+            gap: 12px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 35px;
+
+            margin: 0 auto 25px;
+            padding: 0 20px;
         }
 
         nav a {
-            color: white;
             text-decoration: none;
-            padding: 10px 16px;
+            color: white;
+
+            background: rgba(80, 35, 120, 0.65);
+
+            border: 1px solid rgba(200, 130, 255, 0.35);
             border-radius: 12px;
 
-            background: rgba(70, 25, 100, 0.55);
-            border: 1px solid rgba(190, 120, 255, 0.3);
+            padding: 10px 16px;
 
-            transition: 0.25s ease;
+            font-size: 14px;
+            font-weight: bold;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         nav a:hover {
-            background: rgba(120, 50, 170, 0.65);
+            transform: translateY(-2px);
+
+            background: rgba(130, 60, 190, 0.75);
 
             box-shadow:
-                0 0 15px rgba(180, 90, 255, 0.35);
+                0 0 12px rgba(180, 90, 255, 0.4);
+        }
 
-            transform: translateY(-2px);
+        main {
+            width: min(1400px, 94%);
+            margin: 0 auto;
+
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            font-size: 2.2rem;
             margin: 10px 0 12px;
+
+            font-size: clamp(26px, 5vw, 42px);
+
+            text-shadow:
+                0 0 10px rgba(190, 100, 255, 0.65),
+                0 0 25px rgba(130, 50, 220, 0.35);
         }
 
         .intro {
-            max-width: 760px;
-            margin: 0 auto 32px;
+            max-width: 720px;
 
-            text-align: center;
-            line-height: 1.7;
+            margin: 0 auto 30px;
 
-            color: #eadcff;
+            line-height: 1.6;
+
+            font-size: 16px;
+
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .bestof-box {
-            background: rgba(20, 10, 35, 0.72);
-
-            border: 1px solid rgba(190, 120, 255, 0.32);
-            border-radius: 22px;
-
-            padding: 24px 18px 28px;
-
-            box-shadow:
-                0 0 25px rgba(150, 70, 220, 0.15);
-        }
-
-        .bestof-title {
-            text-align: center;
-
+        h2 {
             margin: 0 0 25px;
 
-            font-size: 1.5rem;
+            font-size: 24px;
+
+            color: #d9a7ff;
+
+            text-shadow:
+                0 0 8px rgba(190, 100, 255, 0.45);
         }
 
-        .videos {
-
+        .bestof {
             display: grid;
 
-            grid-template-columns:
-                repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
 
             gap: 14px;
 
             align-items: start;
+
+            padding-bottom: 25px;
         }
 
         .video-card {
+            width: 100%;
+            max-width: 250px;
 
-            background: rgba(10, 5, 20, 0.65);
+            margin: 0 auto;
 
-            border: 1px solid rgba(190, 120, 255, 0.22);
+            background: rgba(20, 10, 35, 0.68);
+
+            border: 1px solid rgba(190, 120, 255, 0.3);
 
             border-radius: 16px;
 
-            padding: 9px;
+            padding: 8px;
+
+            box-shadow:
+                0 0 18px rgba(150, 70, 220, 0.12);
+
+            overflow: hidden;
 
             transition:
                 transform 0.25s ease,
@@ -180,102 +193,256 @@
         }
 
         .video-card:hover {
+            transform: translateY(-5px);
 
-            transform: translateY(-4px);
-
-            border-color:
-                rgba(200, 130, 255, 0.55);
+            border-color: rgba(210, 140, 255, 0.65);
 
             box-shadow:
-                0 0 20px rgba(160, 70, 230, 0.18);
+                0 0 25px rgba(170, 80, 255, 0.3);
         }
 
-        .rank {
-
-            text-align: center;
-
-            color: #d69aff;
-
-            font-size: 1rem;
-
-            font-weight: bold;
-
-            margin: 3px 0 9px;
-        }
-
-        .video-wrapper {
-
-            position: relative;
+        .video-card iframe {
+            display: block;
 
             width: 100%;
 
             aspect-ratio: 9 / 16;
 
-            overflow: hidden;
-
-            border-radius: 12px;
-
-            background: #08030d;
-        }
-
-        .video-wrapper iframe {
-
-            width: 100%;
-            height: 100%;
-
             border: 0;
+
+            border-radius: 10px;
         }
 
         .update {
+            margin: 10px 0 30px;
 
-            text-align: center;
+            color: rgba(220, 200, 240, 0.7);
 
-            margin: 24px 0 0;
-
-            color: #cdb9dc;
-
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        .back {
+        .back-button {
+            display: inline-block;
 
-            display: block;
-
-            width: fit-content;
-
-            margin: 30px auto 0;
+            margin-bottom: 40px;
 
             padding: 11px 18px;
 
             border-radius: 12px;
 
-            background:
-                rgba(90, 35, 130, 0.55);
-
-            border:
-                1px solid rgba(190, 120, 255, 0.3);
+            text-decoration: none;
 
             color: white;
 
-            text-decoration: none;
+            background: rgba(100, 40, 150, 0.7);
 
-            transition: 0.25s ease;
+            border: 1px solid rgba(210, 140, 255, 0.4);
+
+            font-weight: bold;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
         }
 
-        .back:hover {
+        .back-button:hover {
+            transform: translateY(-2px);
 
-            background:
-                rgba(120, 50, 170, 0.65);
+            background: rgba(140, 60, 200, 0.8);
 
             box-shadow:
-                0 0 15px rgba(180, 90, 255, 0.3);
+                0 0 18px rgba(190, 100, 255, 0.5);
         }
 
         footer {
             margin: 10px auto 25px;
+
             padding: 0 20px;
 
             text-align: center;
 
-            color: rgba(220,
-```
+            color: rgba(220, 200, 240, 0.65);
+
+            font-size: 0.75rem;
+
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1100px) {
+
+            .bestof {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .bestof {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+
+                gap: 12px;
+            }
+
+            .video-card {
+                max-width: 250px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                height: 155px;
+                padding-top: 20px;
+            }
+
+            nav {
+                min-height: 58px;
+                padding: 0 12px;
+                gap: 8px;
+            }
+
+            nav a {
+                padding: 9px 14px;
+                font-size: 0.9rem;
+            }
+
+            main {
+                width: 92%;
+            }
+
+            .bestof {
+                grid-template-columns: 1fr;
+            }
+
+            .video-card {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            footer {
+                font-size: 0.7rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <img
+            src="logo.png"
+            alt="Logo Louloutte"
+            class="logo"
+        >
+
+    </header>
+
+    <nav>
+
+        <a href="index.html">
+            Accueil
+        </a>
+
+        <a href="team.html">
+            Affiliés Twitch
+        </a>
+
+        <a href="louloutte.html">
+            Mon Live
+        </a>
+
+        <a href="bestof.html">
+            Best Of Louloutte
+        </a>
+
+    </nav>
+
+    <main>
+
+        <h1>
+            🎬 Best Of Louloutte 💜
+        </h1>
+
+        <p class="intro">
+            Découvrez la sélection des 5 Shorts qui ont le plus marqué la chaîne. 💜
+        </p>
+
+        <h2>
+            ⭐ Le Top 5 du moment
+        </h2>
+
+        <section class="bestof">
+
+            <div class="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/kB22-z1ENWM"
+                    title="Short YouTube de Louloutte"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/Ekx7ipdkbCo"
+                    title="Short YouTube de Louloutte"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/cE-NFtQhQCk"
+                    title="Short YouTube de Louloutte"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/qKzZ157Th4I"
+                    title="Short YouTube de Louloutte"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <div class="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/H5sGOZEC29k"
+                    title="Short YouTube de Louloutte"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+        </section>
+
+        <p class="update">
+            🔄 Sélection mise à jour automatiquement
+        </p>
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+            💜 Retour à l'accueil
+        </a>
+
+    </main>
+
+    <footer>
+        © 2026 Louloutte — Site communautaire non officiel de Twitch et YouTube.
+        Aucun renseignement personnel n’est volontairement collecté par ce site.
+    </footer>
+
+</body>
+</html>
