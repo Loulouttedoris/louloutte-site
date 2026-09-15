@@ -52,22 +52,31 @@
         }
     }
 
+    /* En-tête commun à toutes les pages */
     header {
-        padding: 30px 20px 15px;
+        height: 175px;
+        padding: 25px 20px 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
     }
 
     .logo {
         width: 180px;
         max-width: 70%;
         height: auto;
+        display: block;
     }
 
     nav {
+        min-height: 62px;
         display: flex;
+        align-items: center;
         justify-content: center;
         gap: 12px;
         flex-wrap: wrap;
-        margin: 15px auto 25px;
+        margin: 0 auto 25px;
+        padding: 0 20px;
     }
 
     nav a {
@@ -229,12 +238,29 @@
     footer {
         margin: 10px auto 25px;
         padding: 0 20px;
+        text-align: center;
         color: rgba(220, 200, 240, 0.65);
         font-size: 0.75rem;
         line-height: 1.5;
     }
 
     @media (max-width: 600px) {
+        header {
+            height: 155px;
+            padding-top: 20px;
+        }
+
+        nav {
+            min-height: 58px;
+            padding: 0 12px;
+            gap: 8px;
+        }
+
+        nav a {
+            padding: 9px 14px;
+            font-size: 0.9rem;
+        }
+
         footer {
             font-size: 0.7rem;
         }
