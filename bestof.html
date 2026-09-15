@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Best Of Louloutte - Les meilleurs Shorts 💜</title>
+
+    <meta
+        name="description"
+        content="Découvrez le Best Of de Louloutte avec une sélection automatique de ses 5 meilleurs Shorts YouTube. 💜"
+    >
+
+    <link
+        rel="canonical"
+        href="https://loulouttedoris.github.io/louloutte-site/bestof.html"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background:
+                linear-gradient(
+                    rgba(10, 5, 20, 0.72),
+                    rgba(10, 5, 20, 0.82)
+                ),
+                url("background.png") center / cover fixed;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 5, 25, 0.25);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .page {
+            width: min(1100px, 92%);
+            margin: auto;
+            padding: 30px 0 60px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 130px;
+            max-width: 45%;
+            margin-bottom: 12px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 12px;
+            background: rgba(70, 25, 100, 0.55);
+            border: 1px solid rgba(190, 120, 255, 0.3);
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            background: rgba(120, 50, 170, 0.65);
+            box-shadow: 0 0 15px rgba(180, 90, 255, 0.35);
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 10px 0 12px;
+        }
+
+        .intro {
+            max-width: 760px;
+            margin: 0 auto 35px;
+            text-align: center;
+            line-height: 1.7;
+            color: #eadcff;
+        }
+
+        .bestof-box {
+            background: rgba(20, 10, 35, 0.72);
+            border: 1px solid rgba(190, 120, 255, 0.32);
+            border-radius: 22px;
+            padding: 25px;
+            box-shadow: 0 0 25px rgba(150, 70, 220, 0.15);
+        }
+
+        .bestof-title {
+            text-align: center;
+            margin: 0 0 25px;
+            font-size: 1.5rem;
+        }
+
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .video-card {
+            background: rgba(10, 5, 20, 0.65);
+            border: 1px solid rgba(190, 120, 255, 0.22);
+            border-radius: 18px;
+            padding: 12px;
+            transition: 0.25s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(200, 130, 255, 0.55);
+            box-shadow: 0 0 20px rgba(160, 70, 230, 0.18);
+        }
+
+        .rank {
+            text-align: center;
+            color: #d69aff;
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin: 5px 0 12px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #08030d;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .update {
+            text-align: center;
+            margin-top: 28px;
+            color: #cdb9dc;
+            font-size: 0.9rem;
+        }
+
+        .back {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 11px 18px;
+            border-radius: 12px;
+            background: rgba(90, 35, 130, 0.55);
+            border: 1px solid rgba(190, 120, 255, 0.3);
+            color: white;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        .back:hover {
+            background: rgba(120, 50, 170, 0.65);
+            box-shadow: 0 0 15px rgba(180, 90, 255, 0.3);
+        }
+
+        @media (max-width: 800px) {
+
+            .videos {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .page {
+                width: 94%;
+                padding-top: 20px;
+            }
+
+            .bestof-box {
+                padding: 16px;
+            }
+
+            nav a {
+                padding: 9px 12px;
+                font-size: 0.9rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+
+        <img
+            src="logo.png"
+            alt="Logo Louloutte"
+            class="logo"
+        >
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="team.html">Affiliés Twitch</a>
+            <a href="louloutte.html">Mon Live</a>
+            <a href="bestof.html">Best Of Louloutte</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <h1>🎬 Best Of Louloutte 💜</h1>
+
+        <p class="intro">
+            Retrouvez automatiquement les 5 meilleurs Shorts de Louloutte.
+            <br>
+            Le classement évolue au fil du temps selon les performances des vidéos.
+        </p>
+
+
+        <section class="bestof-box">
+
+            <h2 class="bestof-title">
+                ⭐ Le Top 5 du moment
+            </h2>
+
+
+            <div class="videos">
+
+                <div class="video-card">
+
+                    <div class="rank">
+                        🥇 N°1
+                    </div>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/VIDEO_ID_1"
+                            title="Best Of Louloutte numéro 1"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="rank">
+                        🥈 N°2
+                    </div>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/VIDEO_ID_2"
+                            title="Best Of Louloutte numéro 2"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="rank">
+                        🥉 N°3
+                    </div>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/VIDEO_ID_3"
+                            title="Best Of Louloutte numéro 3"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="rank">
+                        ⭐ N°4
+                    </div>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/VIDEO_ID_4"
+                            title="Best Of Louloutte numéro 4"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="rank">
+                        ⭐ N°5
+                    </div>
+
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/VIDEO_ID_5"
+                            title="Best Of Louloutte numéro 5"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p class="update">
+                🔄 Sélection mise à jour automatiquement
+            </p>
+
+        </section>
+
+
+        <a
+            class="back"
+            href="index.html"
+        >
+            💜 Retour à l'accueil
+        </a>
+
+    </main>
+
+</div>
+
+</body>
+</html>
