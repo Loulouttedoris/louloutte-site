@@ -2,121 +2,193 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Live Twitch de Louloutte - Gaming en direct 💜</title>
 
-    <meta name="description" content="Regardez le live Twitch de Louloutte en direct : gaming, bonne humeur et moments chill. Retrouvez également ses réseaux sociaux et soutenez la chaîne. 💜">
+    <meta
+        name="description"
+        content="Regardez le live Twitch de Louloutte en direct : gaming, bonne humeur et moments chill. Retrouvez également ses réseaux sociaux et soutenez la chaîne. 💜"
+    >
 
-    <link rel="canonical" href="https://loulouttedoris.github.io/louloutte-site/louloutte.html">
+    <link
+        rel="canonical"
+        href="https://loulouttedoris.github.io/louloutte-site/louloutte.html"
+    >
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            min-height: 100%;
-            font-family: Arial, sans-serif;
-            color: white;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+
             background:
-                linear-gradient(rgba(20, 5, 35, 0.78), rgba(20, 5, 35, 0.88)),
-                url("background.png") center / cover fixed;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
+                linear-gradient(
+                    rgba(10, 5, 20, 0.72),
+                    rgba(10, 5, 20, 0.82)
+                ),
+                url("background.png") center center / cover fixed no-repeat;
+
+            animation: pageFade 0.8s ease;
         }
 
-        @keyframes fadeIn {
+        @keyframes pageFade {
+            from {
+                opacity: 0;
+            }
+
             to {
                 opacity: 1;
             }
         }
 
         header {
-            padding: 30px 20px 15px;
+            height: 175px;
+            padding: 25px 20px 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
         }
 
         .logo {
             width: 180px;
             max-width: 70%;
             height: auto;
+            display: block;
         }
 
         nav {
+            min-height: 62px;
             display: flex;
+            align-items: center;
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
-            margin: 15px auto 25px;
+            margin: 0 auto 25px;
+            padding: 0 20px;
         }
 
         nav a {
-            color: white;
             text-decoration: none;
-            background: rgba(120, 50, 180, 0.35);
-            border: 1px solid rgba(190, 120, 255, 0.5);
-            padding: 10px 18px;
-            border-radius: 20px;
-            transition: 0.25s;
+            color: white;
+
+            background: rgba(80, 35, 120, 0.65);
+
+            border: 1px solid rgba(200, 130, 255, 0.35);
+            border-radius: 12px;
+
+            padding: 10px 16px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         nav a:hover {
-            background: rgba(150, 70, 220, 0.6);
             transform: translateY(-2px);
+
+            background: rgba(130, 60, 190, 0.75);
+
+            box-shadow:
+                0 0 12px rgba(180, 90, 255, 0.4);
         }
 
         main {
-            width: min(1000px, 92%);
-            margin: auto;
+            width: min(1100px, 92%);
+            margin: 0 auto;
+            text-align: center;
         }
 
         h1 {
-            color: #d9a7ff;
-            font-size: 2rem;
-            margin-bottom: 25px;
+            margin: 10px 0 20px;
+
+            font-size: clamp(26px, 5vw, 42px);
+
+            text-shadow:
+                0 0 10px rgba(190, 100, 255, 0.65),
+                0 0 25px rgba(130, 50, 220, 0.35);
         }
 
-        .stream-container {
+        .player {
             width: 100%;
-            background: rgba(20, 10, 35, 0.65);
+            max-width: 1000px;
+            margin: 0 auto;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
             border: 1px solid rgba(190, 120, 255, 0.3);
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 0 25px rgba(150, 70, 220, 0.15);
+
+            box-shadow:
+                0 0 25px rgba(150, 70, 220, 0.18);
         }
 
-        iframe {
+        .player iframe {
+            display: block;
+
             width: 100%;
             height: 500px;
-            border: none;
-            border-radius: 12px;
-            display: block;
+
+            border: 0;
         }
 
         .team-link {
             display: inline-block;
-            margin-top: 18px;
-            color: #d9a7ff;
+
+            margin-top: 25px;
+
+            padding: 11px 18px;
+
+            border-radius: 12px;
+
             text-decoration: none;
+            color: white;
+
+            background: rgba(100, 40, 150, 0.7);
+
+            border: 1px solid rgba(210, 140, 255, 0.4);
+
             font-weight: bold;
-            transition: 0.25s;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
         }
 
         .team-link:hover {
-            color: white;
-            text-decoration: underline;
+            transform: translateY(-2px);
+
+            background: rgba(140, 60, 200, 0.8);
+
+            box-shadow:
+                0 0 18px rgba(190, 100, 255, 0.5);
         }
 
         .social-section {
-            margin-top: 35px;
+            margin-top: 30px;
         }
 
         .social-section h2 {
@@ -135,13 +207,18 @@
         .social {
             width: 44px;
             height: 44px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             border-radius: 50%;
+
             color: white;
             text-decoration: none;
+
             font-size: 20px;
+
             transition: 0.25s;
         }
 
@@ -163,7 +240,13 @@
         }
 
         .instagram {
-            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            background:
+                linear-gradient(
+                    45deg,
+                    #f9ce34,
+                    #ee2a7b,
+                    #6228d7
+                );
         }
 
         .discord {
@@ -180,163 +263,215 @@
 
         .donation-button {
             display: inline-block;
+
             color: white;
             text-decoration: none;
+
             background: rgba(120, 50, 180, 0.45);
+
             border: 1px solid rgba(190, 120, 255, 0.5);
+
             padding: 10px 20px;
+
             border-radius: 22px;
+
             transition: 0.25s;
         }
 
         .donation-button:hover {
             background: rgba(150, 70, 220, 0.65);
+
             transform: translateY(-2px);
         }
 
         footer {
             margin: 10px auto 25px;
+
             padding: 0 20px;
+
+            text-align: center;
+
             color: rgba(220, 200, 240, 0.65);
+
             font-size: 0.75rem;
+
             line-height: 1.5;
         }
 
         @media (max-width: 600px) {
+
             header {
+                height: 155px;
                 padding-top: 20px;
             }
 
-            .logo {
-                width: 145px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
+            nav {
+                min-height: 58px;
+                padding: 0 12px;
+                gap: 8px;
             }
 
             nav a {
-                padding: 8px 14px;
+                padding: 9px 14px;
                 font-size: 0.9rem;
             }
 
-            .stream-container {
-                padding: 8px;
-            }
-
-            iframe {
+            .player iframe {
                 height: 300px;
             }
 
             footer {
                 font-size: 0.7rem;
             }
+
         }
+
     </style>
 </head>
 
 <body>
 
-<header>
-    <img src="logo.png" alt="Logo Louloutte" class="logo">
+    <header>
+
+        <img
+            src="logo.png"
+            alt="Logo Louloutte"
+            class="logo"
+        >
+
+    </header>
 
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="team.html">Affiliés Twitch</a>
-        <a href="louloutte.html">Mon Live</a>
-        <a href="bestof.html">Best Of Louloutte</a>
+
+        <a href="index.html">
+            Accueil
+        </a>
+
+        <a href="team.html">
+            Affiliés Twitch
+        </a>
+
+        <a href="louloutte.html">
+            Mon Live
+        </a>
+
+        <a href="bestof.html">
+            Best Of Louloutte
+        </a>
+
     </nav>
-</header>
 
-<main>
+    <main>
 
-    <h1>Mon Live Twitch 🎥</h1>
+        <h1>
+            Mon Live Twitch 🎥
+        </h1>
 
-    <div class="stream-container">
+        <div class="player">
 
-        <iframe
-            src="https://player.twitch.tv/?channel=louloutte_doris&parent=loulouttedoris.github.io"
-            allowfullscreen>
-        </iframe>
-
-    </div>
-
-    <a href="team.html" class="team-link">
-        💜 Découvrir les affiliés de la Team Louloutte
-    </a>
-
-    <section class="social-section">
-
-        <h2>Retrouvez-moi sur 💜</h2>
-
-        <div class="socials">
-
-            <a href="https://www.twitch.tv/louloutte_doris"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="social twitch"
-               aria-label="Twitch">
-                <i class="fa-brands fa-twitch"></i>
-            </a>
-
-            <a href="https://www.youtube.com/@louloutte_doris"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="social youtube"
-               aria-label="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="https://www.tiktok.com/@louloutte_doris?lang=fr-CA"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="social tiktok"
-               aria-label="TikTok">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-
-            <a href="https://www.instagram.com/louloutte_doris/reels/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="social instagram"
-               aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="https://discord.gg/qScrgEYXYw"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="social discord"
-               aria-label="Discord">
-                <i class="fa-brands fa-discord"></i>
-            </a>
+            <iframe
+                src="https://player.twitch.tv/?channel=louloutte_doris&parent=loulouttedoris.github.io"
+                height="500"
+                width="100%"
+                allowfullscreen
+                title="Live Twitch de Louloutte"
+            >
+            </iframe>
 
         </div>
 
-    </section>
-
-    <section class="donation">
-
-        <p>
-            Envie de soutenir la chaîne ? 💜
-        </p>
-
-        <a href="https://streamelements.com/louloutte_doris/tip"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="donation-button">
-            💜 Soutenir la chaîne
+        <a
+            class="team-link"
+            href="team.html"
+        >
+            💜 Découvrir les affiliés de la Team Louloutte
         </a>
 
-    </section>
+        <section class="social-section">
 
-</main>
+            <h2>
+                Retrouvez-moi sur 💜
+            </h2>
 
-<footer>
-    © 2026 Louloutte — Site communautaire non officiel de Twitch et YouTube.
-    Aucun renseignement personnel n’est volontairement collecté par ce site.
-</footer>
+            <div class="socials">
+
+                <a
+                    href="https://www.twitch.tv/louloutte_doris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social twitch"
+                    aria-label="Twitch"
+                >
+                    <i class="fa-brands fa-twitch"></i>
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@louloutte_doris"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social youtube"
+                    aria-label="YouTube"
+                >
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/louloutte_doris/reels/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social instagram"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/@louloutte_doris?lang=fr-CA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social tiktok"
+                    aria-label="TikTok"
+                >
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+                <a
+                    href="https://discord.gg/qScrgEYXYw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social discord"
+                    aria-label="Discord"
+                >
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="donation">
+
+            <p>
+                💜 Soutenir la chaîne
+            </p>
+
+            <a
+                href="https://streamelements.com/louloutte_doris/tip"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="donation-button"
+            >
+                Soutenir Louloutte
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Louloutte — Site communautaire non officiel de Twitch et YouTube.
+        Aucun renseignement personnel n’est volontairement collecté par ce site.
+    </footer>
 
 </body>
 </html>
-```
