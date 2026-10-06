@@ -1,867 +1,896 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Affiliés Twitch - Team Louloutte 💜</title>
+```
+<title>Affiliés Twitch - Team Louloutte 💜</title>
 
-    <meta
-        name="description"
-        content="Découvrez les affiliés Twitch de la Team Louloutte : des créateurs gaming passionnés, leurs chaînes Twitch et leurs univers. 💜"
-    >
+<meta
+    name="description"
+    content="Découvrez les affiliés Twitch de la Team Louloutte : des créateurs gaming passionnés, leurs chaînes Twitch et leurs univers. 💜"
+>
 
-    <link
-        rel="canonical"
-        href="https://loulouttedoris.github.io/louloutte-site/team.html"
-    >
+<link
+    rel="canonical"
+    href="https://loulouttedoris.github.io/louloutte-site/team.html"
+>
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+
+        background:
+            linear-gradient(
+                rgba(10, 5, 20, 0.72),
+                rgba(10, 5, 20, 0.82)
+            ),
+            url("background.png") center center / cover fixed no-repeat;
+
+        animation: pageFade 0.8s ease;
+    }
+
+    @keyframes pageFade {
+        from {
+            opacity: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
+        to {
+            opacity: 1;
         }
+    }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
+    header {
+        height: 175px;
+        padding: 25px 20px 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
 
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
+    .logo {
+        width: 180px;
+        max-width: 70%;
+        height: auto;
+        display: block;
+    }
 
-            background:
-                linear-gradient(
-                    rgba(10, 5, 20, 0.72),
-                    rgba(10, 5, 20, 0.82)
-                ),
-                url("background.png") center center / cover fixed no-repeat;
+    nav {
+        min-height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 0 auto 25px;
+        padding: 0 20px;
+    }
 
-            animation: pageFade 0.8s ease;
-        }
+    nav a {
+        text-decoration: none;
+        color: white;
 
-        @keyframes pageFade {
-            from {
-                opacity: 0;
-            }
+        background: rgba(80, 35, 120, 0.65);
 
-            to {
-                opacity: 1;
-            }
-        }
+        border: 1px solid rgba(200, 130, 255, 0.35);
+        border-radius: 12px;
 
-        header {
-            height: 175px;
-            padding: 25px 20px 10px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-        }
+        padding: 10px 16px;
 
-        .logo {
-            width: 180px;
-            max-width: 70%;
-            height: auto;
-            display: block;
-        }
+        font-size: 14px;
+        font-weight: bold;
 
-        nav {
-            min-height: 62px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin: 0 auto 25px;
-            padding: 0 20px;
-        }
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: white;
+    nav a:hover {
+        transform: translateY(-2px);
 
-            background: rgba(80, 35, 120, 0.65);
+        background: rgba(130, 60, 190, 0.75);
 
-            border: 1px solid rgba(200, 130, 255, 0.35);
-            border-radius: 12px;
+        box-shadow:
+            0 0 12px rgba(180, 90, 255, 0.4);
+    }
 
-            padding: 10px 16px;
+    main {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+        text-align: center;
+    }
 
-            font-size: 14px;
-            font-weight: bold;
+    h1 {
+        margin: 10px 0 12px;
 
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease,
-                box-shadow 0.2s ease;
-        }
+        font-size: clamp(26px, 5vw, 42px);
 
-        nav a:hover {
-            transform: translateY(-2px);
+        text-shadow:
+            0 0 10px rgba(190, 100, 255, 0.65),
+            0 0 25px rgba(130, 50, 220, 0.35);
+    }
 
-            background: rgba(130, 60, 190, 0.75);
+    .intro {
+        max-width: 720px;
+        margin: 0 auto 25px;
+
+        line-height: 1.6;
+        font-size: 16px;
+
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .live-link {
+        display: inline-block;
+
+        margin-bottom: 30px;
+
+        padding: 11px 18px;
+
+        border-radius: 12px;
+
+        text-decoration: none;
+        color: white;
+
+        background: rgba(100, 40, 150, 0.7);
+
+        border: 1px solid rgba(210, 140, 255, 0.4);
+
+        font-weight: bold;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .live-link:hover {
+        transform: translateY(-2px);
+
+        background: rgba(140, 60, 200, 0.8);
+
+        box-shadow:
+            0 0 18px rgba(190, 100, 255, 0.5);
+    }
+
+    .team {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 18px;
+
+        padding-bottom: 55px;
+    }
+
+    .card {
+        display: block;
+        position: relative;
+
+        text-decoration: none;
+        color: white;
+
+        background: rgba(20, 10, 35, 0.68);
+
+        border: 1px solid rgba(190, 120, 255, 0.3);
+
+        border-radius: 18px;
+
+        padding: 20px 12px;
+
+        box-shadow:
+            0 0 18px rgba(150, 70, 220, 0.12);
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+
+        border-color: rgba(210, 140, 255, 0.65);
+
+        box-shadow:
+            0 0 25px rgba(170, 80, 255, 0.3);
+    }
+
+    .avatar {
+        display: block;
+
+        width: 130px;
+        height: 130px;
+
+        margin: 0 auto 15px;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        border: 3px solid rgba(170, 100, 255, 0.45);
+
+        box-shadow:
+            0 0 12px rgba(150, 70, 230, 0.25);
+
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease,
+            filter 0.2s ease;
+    }
+
+    @keyframes neonLivePulse {
+
+        0% {
+            border-color: #5c0000;
 
             box-shadow:
-                0 0 12px rgba(180, 90, 255, 0.4);
+                0 0 3px rgba(255, 0, 0, 0.15),
+                0 0 7px rgba(255, 0, 0, 0.08),
+                0 0 12px rgba(255, 0, 0, 0.04);
+
+            filter: brightness(0.82);
         }
 
-        main {
-            width: min(1100px, 92%);
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 10px 0 12px;
-
-            font-size: clamp(26px, 5vw, 42px);
-
-            text-shadow:
-                0 0 10px rgba(190, 100, 255, 0.65),
-                0 0 25px rgba(130, 50, 220, 0.35);
-        }
-
-        .intro {
-            max-width: 720px;
-            margin: 0 auto 25px;
-
-            line-height: 1.6;
-            font-size: 16px;
-
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .live-link {
-            display: inline-block;
-
-            margin-bottom: 30px;
-
-            padding: 11px 18px;
-
-            border-radius: 12px;
-
-            text-decoration: none;
-            color: white;
-
-            background: rgba(100, 40, 150, 0.7);
-
-            border: 1px solid rgba(210, 140, 255, 0.4);
-
-            font-weight: bold;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease;
-        }
-
-        .live-link:hover {
-            transform: translateY(-2px);
-
-            background: rgba(140, 60, 200, 0.8);
+        25% {
+            border-color: #ff1717;
 
             box-shadow:
-                0 0 18px rgba(190, 100, 255, 0.5);
+                0 0 8px rgba(255, 0, 0, 0.65),
+                0 0 18px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 0, 0, 0.3);
+
+            filter: brightness(1.05);
         }
 
-        .team {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 18px;
-
-            padding-bottom: 55px;
-        }
-
-        .card {
-            display: block;
-            position: relative;
-
-            text-decoration: none;
-            color: white;
-
-            background: rgba(20, 10, 35, 0.68);
-
-            border: 1px solid rgba(190, 120, 255, 0.3);
-
-            border-radius: 18px;
-
-            padding: 20px 12px;
+        50% {
+            border-color: #ff5555;
 
             box-shadow:
-                0 0 18px rgba(150, 70, 220, 0.12);
+                0 0 12px rgba(255, 0, 0, 1),
+                0 0 25px rgba(255, 0, 0, 0.95),
+                0 0 45px rgba(255, 0, 0, 0.7),
+                0 0 70px rgba(255, 0, 0, 0.35);
 
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
+            filter: brightness(1.35);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-
-            border-color: rgba(210, 140, 255, 0.65);
+        75% {
+            border-color: #ff1717;
 
             box-shadow:
-                0 0 25px rgba(170, 80, 255, 0.3);
+                0 0 8px rgba(255, 0, 0, 0.65),
+                0 0 18px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 0, 0, 0.3);
+
+            filter: brightness(1.05);
         }
 
-        .avatar {
-            display: block;
-
-            width: 130px;
-            height: 130px;
-
-            margin: 0 auto 15px;
-
-            border-radius: 50%;
-
-            object-fit: cover;
-
-            border: 3px solid rgba(170, 100, 255, 0.45);
+        100% {
+            border-color: #5c0000;
 
             box-shadow:
-                0 0 12px rgba(150, 70, 230, 0.25);
+                0 0 3px rgba(255, 0, 0, 0.15),
+                0 0 7px rgba(255, 0, 0, 0.08),
+                0 0 12px rgba(255, 0, 0, 0.04);
 
-            transition:
-                border-color 0.2s ease,
-                box-shadow 0.2s ease,
-                filter 0.2s ease;
+            filter: brightness(0.82);
         }
+    }
 
-        @keyframes neonLivePulse {
+    .live .avatar {
+        animation: neonLivePulse 1.8s ease-in-out infinite;
+    }
 
-            0% {
-                border-color: #5c0000;
+    .name {
+        margin: 5px 0 8px;
 
-                box-shadow:
-                    0 0 3px rgba(255, 0, 0, 0.15),
-                    0 0 7px rgba(255, 0, 0, 0.08),
-                    0 0 12px rgba(255, 0, 0, 0.04);
+        font-size: 18px;
+        font-weight: bold;
 
-                filter: brightness(0.82);
-            }
+        color: white;
+    }
 
-            25% {
-                border-color: #ff1717;
+    .status {
+        margin: 0;
 
-                box-shadow:
-                    0 0 8px rgba(255, 0, 0, 0.65),
-                    0 0 18px rgba(255, 0, 0, 0.5),
-                    0 0 30px rgba(255, 0, 0, 0.3);
+        font-size: 14px;
 
-                filter: brightness(1.05);
-            }
+        color: rgba(255, 255, 255, 0.55);
 
-            50% {
-                border-color: #ff5555;
+        transition:
+            color 0.2s ease,
+            text-shadow 0.2s ease;
+    }
 
-                box-shadow:
-                    0 0 12px rgba(255, 0, 0, 1),
-                    0 0 25px rgba(255, 0, 0, 0.95),
-                    0 0 45px rgba(255, 0, 0, 0.7),
-                    0 0 70px rgba(255, 0, 0, 0.35);
+    .live .status {
+        color: #ff3030;
 
-                filter: brightness(1.35);
-            }
+        font-weight: bold;
 
-            75% {
-                border-color: #ff1717;
+        text-shadow:
+            0 0 8px rgba(255, 30, 30, 0.75),
+            0 0 16px rgba(255, 0, 0, 0.4);
+    }
 
-                box-shadow:
-                    0 0 8px rgba(255, 0, 0, 0.65),
-                    0 0 18px rgba(255, 0, 0, 0.5),
-                    0 0 30px rgba(255, 0, 0, 0.3);
+    .queen-crown {
+        position: absolute;
 
-                filter: brightness(1.05);
-            }
+        width: 55px;
+        height: 42px;
 
-            100% {
-                border-color: #5c0000;
+        top: 7px;
+        right: 22px;
 
-                box-shadow:
-                    0 0 3px rgba(255, 0, 0, 0.15),
-                    0 0 7px rgba(255, 0, 0, 0.08),
-                    0 0 12px rgba(255, 0, 0, 0.04);
+        z-index: 5;
 
-                filter: brightness(0.82);
-            }
-        }
+        overflow: visible;
 
-        .live .avatar {
-            animation: neonLivePulse 1.8s ease-in-out infinite;
-        }
+        color: #c77dff;
 
-        .name {
-            margin: 5px 0 8px;
+        filter:
+            drop-shadow(
+                0 0 5px rgba(199, 125, 255, 0.7)
+            );
 
-            font-size: 18px;
-            font-weight: bold;
+        animation: crownFloat 3s ease-in-out infinite;
+    }
 
-            color: white;
-        }
+    @keyframes crownFloat {
 
-        .status {
-            margin: 0;
-
-            font-size: 14px;
-
-            color: rgba(255, 255, 255, 0.55);
-
-            transition:
-                color 0.2s ease,
-                text-shadow 0.2s ease;
-        }
-
-        .live .status {
-            color: #ff3030;
-
-            font-weight: bold;
-
-            text-shadow:
-                0 0 8px rgba(255, 30, 30, 0.75),
-                0 0 16px rgba(255, 0, 0, 0.4);
-        }
-
-        .queen-crown {
-            position: absolute;
-
-            width: 55px;
-            height: 42px;
-
-            top: 7px;
-            right: 22px;
-
-            z-index: 5;
-
-            overflow: visible;
-
-            color: #c77dff;
+        0%,
+        100% {
+            transform:
+                translateY(0)
+                rotate(2deg);
 
             filter:
                 drop-shadow(
-                    0 0 5px rgba(199, 125, 255, 0.7)
+                    0 0 5px rgba(199, 125, 255, 0.65)
                 );
-
-            animation: crownFloat 3s ease-in-out infinite;
         }
 
-        @keyframes crownFloat {
+        50% {
+            transform:
+                translateY(-5px)
+                rotate(-2deg);
 
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    rotate(2deg);
+            filter:
+                drop-shadow(
+                    0 0 11px rgba(199, 125, 255, 1)
+                )
+                drop-shadow(
+                    0 0 20px rgba(170, 80, 255, 0.45)
+                );
+        }
+    }
 
-                filter:
-                    drop-shadow(
-                        0 0 5px rgba(199, 125, 255, 0.65)
-                    );
-            }
+    .live .queen-crown {
+        animation: crownLive 1.8s ease-in-out infinite;
+    }
 
-            50% {
-                transform:
-                    translateY(-5px)
-                    rotate(-2deg);
+    @keyframes crownLive {
 
-                filter:
-                    drop-shadow(
-                        0 0 11px rgba(199, 125, 255, 1)
-                    )
-                    drop-shadow(
-                        0 0 20px rgba(170, 80, 255, 0.45)
-                    );
-            }
+        0%,
+        100% {
+            transform:
+                translateY(0)
+                rotate(2deg)
+                scale(1);
+
+            color: #b965ff;
+
+            filter:
+                drop-shadow(
+                    0 0 5px rgba(190, 90, 255, 0.65)
+                );
         }
 
-        .live .queen-crown {
-            animation: crownLive 1.8s ease-in-out infinite;
+        50% {
+            transform:
+                translateY(-6px)
+                rotate(-2deg)
+                scale(1.08);
+
+            color: #e0a6ff;
+
+            filter:
+                drop-shadow(
+                    0 0 10px rgba(210, 120, 255, 1)
+                )
+                drop-shadow(
+                    0 0 22px rgba(175, 70, 255, 0.85)
+                )
+                drop-shadow(
+                    0 0 35px rgba(150, 50, 255, 0.5)
+                );
+        }
+    }
+
+    footer {
+        margin: 10px auto 25px;
+        padding: 0 20px;
+        text-align: center;
+        color: rgba(220, 200, 240, 0.65);
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 800px) {
+
+        .team {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        @keyframes crownLive {
+    }
 
-            0%,
-            100% {
-                transform:
-                    translateY(0)
-                    rotate(2deg)
-                    scale(1);
+    @media (max-width: 550px) {
 
-                color: #b965ff;
+        nav {
+            min-height: 58px;
+            padding: 0 12px;
+            gap: 8px;
+        }
 
-                filter:
-                    drop-shadow(
-                        0 0 5px rgba(190, 90, 255, 0.65)
-                    );
-            }
+        nav a {
+            padding: 9px 14px;
+            font-size: 0.9rem;
+        }
 
-            50% {
-                transform:
-                    translateY(-6px)
-                    rotate(-2deg)
-                    scale(1.08);
+        .team {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
 
-                color: #e0a6ff;
+        .card {
+            padding: 18px 10px;
+        }
 
-                filter:
-                    drop-shadow(
-                        0 0 10px rgba(210, 120, 255, 1)
-                    )
-                    drop-shadow(
-                        0 0 22px rgba(175, 70, 255, 0.85)
-                    )
-                    drop-shadow(
-                        0 0 35px rgba(150, 50, 255, 0.5)
-                    );
-            }
+        .avatar {
+            width: 110px;
+            height: 110px;
+        }
+
+        .queen-crown {
+            width: 50px;
+            height: 38px;
+
+            top: 6px;
+            right: 24%;
         }
 
         footer {
-            margin: 10px auto 25px;
-            padding: 0 20px;
-            text-align: center;
-            color: rgba(220, 200, 240, 0.65);
-            font-size: 0.75rem;
-            line-height: 1.5;
+            font-size: 0.7rem;
         }
 
-        @media (max-width: 800px) {
-
-            .team {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
+        header {
+            height: 155px;
+            padding-top: 20px;
         }
 
-        @media (max-width: 550px) {
+    }
 
-            nav {
-                min-height: 58px;
-                padding: 0 12px;
-                gap: 8px;
-            }
+</style>
+```
 
-            nav a {
-                padding: 9px 14px;
-                font-size: 0.9rem;
-            }
-
-            .team {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .card {
-                padding: 18px 10px;
-            }
-
-            .avatar {
-                width: 110px;
-                height: 110px;
-            }
-
-            .queen-crown {
-                width: 50px;
-                height: 38px;
-
-                top: 6px;
-                right: 24%;
-            }
-
-            footer {
-                font-size: 0.7rem;
-            }
-
-            header {
-                height: 155px;
-                padding-top: 20px;
-            }
-
-        }
-
-    </style>
 </head>
 
 <body>
 
-    <header>
+```
+<header>
 
-        <img
-            src="logo.png"
-            alt="Logo Louloutte"
-            class="logo"
-        >
+    <img
+        src="logo.png"
+        alt="Logo Louloutte"
+        class="logo"
+    >
 
-    </header>
+</header>
 
-    <nav>
+<nav>
 
-        <a href="index.html">
-            Accueil
-        </a>
+    <a href="index.html">
+        Accueil
+    </a>
 
-        <a href="team.html">
-            Affiliés Twitch
-        </a>
+    <a href="team.html">
+        Affiliés Twitch
+    </a>
 
-        <a href="louloutte.html">
-            Mon Live
-        </a>
+    <a href="louloutte.html">
+        Mon Live
+    </a>
 
-        <a href="bestof.html">
-            Best Of Louloutte
-        </a>
+    <a href="bestof.html">
+        Best Of Louloutte
+    </a>
 
-    </nav>
+</nav>
 
-    <main>
+<main>
 
-        <h1>
-            Les Affiliés de la Team Louloutte 💜
-        </h1>
+    <h1>
+        Les Affiliés de la Team Louloutte 💜
+    </h1>
 
-        <p class="intro">
-            Découvrez les créateurs qui font partie de la Team Louloutte.
-            <br>
-            Cliquez sur un profil pour découvrir sa chaîne Twitch et soutenir son univers.
-        </p>
+    <p class="intro">
+        Découvrez les créateurs qui font partie de la Team Louloutte.
+        <br>
+        Cliquez sur un profil pour découvrir sa chaîne Twitch et soutenir son univers.
+    </p>
+
+    <a
+        class="live-link"
+        href="louloutte.html"
+    >
+        🎥 Voir le Live Twitch de Louloutte
+    </a>
+
+    <section class="team" id="team">
 
         <a
-            class="live-link"
-            href="louloutte.html"
+            class="card"
+            href="https://www.twitch.tv/louloutte_doris"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="louloutte_doris"
         >
-            🎥 Voir le Live Twitch de Louloutte
+
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de louloutte_doris"
+            >
+
+            <svg
+                class="queen-crown"
+                viewBox="0 0 100 75"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Couronne de Louloutte"
+            >
+
+                <path
+                    d="M10 18
+                       L27 34
+                       L39 11
+                       L50 36
+                       L62 11
+                       L74 34
+                       L90 18
+                       L82 61
+                       L18 61
+                      Z"
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+                <path
+                    d="M18 61
+                       C35 67 65 67 82 61"
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+                <path
+                    d="M22 52
+                       C38 56 62 56 78 52"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    opacity="0.75"
+                />
+
+            </svg>
+
+            <p class="name">
+                louloutte_doris
+            </p>
+
+            <p class="status">
+                Chargement...
+            </p>
+
         </a>
 
-        <section class="team" id="team">
+        <a
+            class="card"
+            href="https://www.twitch.tv/adren4line_"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="adren4line_"
+        >
 
-            <a
-                class="card"
-                href="https://www.twitch.tv/louloutte_doris"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-username="louloutte_doris"
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de adren4line_"
             >
 
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de louloutte_doris"
-                >
+            <p class="name">
+                adren4line_
+            </p>
 
-                <svg
-                    class="queen-crown"
-                    viewBox="0 0 100 75"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Couronne de Louloutte"
-                >
+            <p class="status">
+                Chargement...
+            </p>
 
-                    <path
-                        d="M10 18
-                           L27 34
-                           L39 11
-                           L50 36
-                           L62 11
-                           L74 34
-                           L90 18
-                           L82 61
-                           L18 61
-                           Z"
-                        stroke="currentColor"
-                        stroke-width="5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
+        </a>
 
-                    <path
-                        d="M18 61
-                           C35 67 65 67 82 61"
-                        stroke="currentColor"
-                        stroke-width="5"
-                        stroke-linecap="round"
-                    />
+        <a
+            class="card"
+            href="https://www.twitch.tv/steroban_tv"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="steroban_tv"
+        >
 
-                    <path
-                        d="M22 52
-                           C38 56 62 56 78 52"
-                        stroke="currentColor"
-                        stroke-width="3"
-                        stroke-linecap="round"
-                        opacity="0.75"
-                    />
-
-                </svg>
-
-                <p class="name">
-                    louloutte_doris
-                </p>
-
-                <p class="status">
-                    Chargement...
-                </p>
-
-            </a>
-
-            <a
-                class="card"
-                href="https://www.twitch.tv/adren4line_"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-username="adren4line_"
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de steroban_tv"
             >
 
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de adren4line_"
-                >
+            <p class="name">
+                steroban_tv
+            </p>
 
-                <p class="name">
-                    adren4line_
-                </p>
+            <p class="status">
+                Chargement...
+            </p>
 
-                <p class="status">
-                    Chargement...
-                </p>
+        </a>
 
-            </a>
+        <a
+            class="card"
+            href="https://www.twitch.tv/serizawa5714"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="serizawa5714"
+        >
 
-            <a
-                class="card"
-                href="https://www.twitch.tv/steroban_tv"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-username="steroban_tv"
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de serizawa5714"
             >
 
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de steroban_tv"
-                >
+            <p class="name">
+                serizawa5714
+            </p>
 
-                <p class="name">
-                    steroban_tv
-                </p>
+            <p class="status">
+                Chargement...
+            </p>
 
-                <p class="status">
-                    Chargement...
-                </p>
+        </a>
 
-            </a>
+        <a
+            class="card"
+            href="https://www.twitch.tv/pikharleyquinn"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="pikharleyquinn"
+        >
 
-            <a
-                class="card"
-                href="https://www.twitch.tv/serizawa5714"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-username="serizawa5714"
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de pikharleyquinn"
             >
 
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de serizawa5714"
-                >
+            <p class="name">
+                pikharleyquinn
+            </p>
 
-                <p class="name">
-                    serizawa5714
-                </p>
+            <p class="status">
+                Chargement...
+            </p>
 
-                <p class="status">
-                    Chargement...
-                </p>
+        </a>
 
-            </a>
+        <a
+            class="card"
+            href="https://www.twitch.tv/micky__rcs67"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="micky__rcs67"
+        >
 
-            <a
-                class="card"
-                href="https://www.twitch.tv/pikharleyquinn"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-username="pikharleyquinn"
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de micky__rcs67"
             >
 
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de pikharleyquinn"
-                >
+            <p class="name">
+                micky__rcs67
+            </p>
 
-                <p class="name">
-                    pikharleyquinn
-                </p>
+            <p class="status">
+                Chargement...
+            </p>
 
-                <p class="status">
-                    Chargement...
-                </p>
+        </a>
 
-            </a>
+        <a
+            class="card"
+            href="https://www.twitch.tv/solvarkgamingqc"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-username="solvarkgamingqc"
+        >
 
-            <a
-                class="card"
-                href="https://www.twitch.tv/micky__rcs67"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-username="micky__rcs67"
+            <img
+                class="avatar"
+                src=""
+                alt="Avatar de solvarkgamingqc"
             >
 
-                <img
-                    class="avatar"
-                    src=""
-                    alt="Avatar de micky__rcs67"
-                >
+            <p class="name">
+                solvarkgamingqc
+            </p>
 
-                <p class="name">
-                    micky__rcs67
-                </p>
+            <p class="status">
+                Chargement...
+            </p>
 
-                <p class="status">
-                    Chargement...
-                </p>
+        </a>
 
-            </a>
+    </section>
 
-        </section>
+</main>
 
-    </main>
+<footer>
+    © 2026 Louloutte — Site communautaire non officiel de Twitch et YouTube.
+    Aucun renseignement personnel n’est volontairement collecté par ce site.
+</footer>
 
-    <footer>
-        © 2026 Louloutte — Site communautaire non officiel de Twitch et YouTube.
-        Aucun renseignement personnel n’est volontairement collecté par ce site.
-    </footer>
+<script>
 
-    <script>
+    async function checkMember(card) {
 
-        async function checkMember(card) {
+        const username = card.dataset.username;
 
-            const username = card.dataset.username;
+        const avatar = card.querySelector(".avatar");
+        const status = card.querySelector(".status");
 
-            const avatar = card.querySelector(".avatar");
-            const status = card.querySelector(".status");
+        let isLive = false;
 
-            let isLive = false;
+        try {
 
-            try {
+            const response = await fetch(
+                "https://decapi.me/twitch/avatar/" + username
+            );
 
-                const response = await fetch(
-                    "https://decapi.me/twitch/avatar/" + username
-                );
+            const avatarUrl = await response.text();
 
-                const avatarUrl = await response.text();
+            const url = avatarUrl.trim();
 
-                const url = avatarUrl.trim();
-
-                if (url.startsWith("http")) {
-                    avatar.src = url;
-                }
-
-            } catch (error) {
-
-                console.error(
-                    "Impossible de récupérer l'avatar de " + username,
-                    error
-                );
-
+            if (url.startsWith("http")) {
+                avatar.src = url;
             }
 
-            try {
+        } catch (error) {
 
-                const response = await fetch(
-                    "https://decapi.me/twitch/uptime/" + username
-                );
+            console.error(
+                "Impossible de récupérer l'avatar de " + username,
+                error
+            );
 
-                const result = await response.text();
+        }
 
-                if (
-                    result &&
-                    !result.toLowerCase().includes("offline")
-                ) {
+        try {
 
-                    isLive = true;
+            const response = await fetch(
+                "https://decapi.me/twitch/uptime/" + username
+            );
 
-                    card.classList.add("live");
+            const result = await response.text();
 
-                    status.textContent = "🔴 EN LIVE";
+            if (
+                result &&
+                !result.toLowerCase().includes("offline")
+            ) {
 
-                } else {
+                isLive = true;
 
-                    status.textContent = "Hors ligne";
+                card.classList.add("live");
 
-                }
+                status.textContent = "🔴 EN LIVE";
 
-            } catch (error) {
-
-                console.error(
-                    "Impossible de vérifier le live de " + username,
-                    error
-                );
+            } else {
 
                 status.textContent = "Hors ligne";
 
             }
 
-            return {
-                card: card,
-                name: username,
-                isLive: isLive
-            };
+        } catch (error) {
+
+            console.error(
+                "Impossible de vérifier le live de " + username,
+                error
+            );
+
+            status.textContent = "Hors ligne";
 
         }
 
-        async function loadTeam() {
+        return {
+            card: card,
+            name: username,
+            isLive: isLive
+        };
 
-            const team = document.getElementById("team");
+    }
 
-            const cards = Array.from(
-                team.querySelectorAll(".card")
-            );
+    async function loadTeam() {
 
-            const members = await Promise.all(
-                cards.map(card => checkMember(card))
-            );
+        const team = document.getElementById("team");
 
-            members.sort((a, b) => {
+        const cards = Array.from(
+            team.querySelectorAll(".card")
+        );
 
-                if (a.isLive !== b.isLive) {
+        const members = await Promise.all(
+            cards.map(card => checkMember(card))
+        );
 
-                    return a.isLive ? -1 : 1;
+        members.sort((a, b) => {
 
+            if (a.isLive !== b.isLive) {
+
+                return a.isLive ? -1 : 1;
+
+            }
+
+            return a.name.localeCompare(
+                b.name,
+                "fr",
+                {
+                    sensitivity: "base"
                 }
+            );
 
-                return a.name.localeCompare(
-                    b.name,
-                    "fr",
-                    {
-                        sensitivity: "base"
-                    }
-                );
+        });
 
-            });
+        members.forEach(member => {
 
-            members.forEach(member => {
+            team.appendChild(member.card);
 
-                team.appendChild(member.card);
+        });
 
-            });
+    }
 
-        }
+    loadTeam();
 
-        loadTeam();
-
-    </script>
+</script>
+```
 
 </body>
 </html>
